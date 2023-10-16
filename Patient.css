@@ -1,0 +1,631 @@
+.backgrounds-child11 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--color-lightblue);
+  width: 1470px;
+  height: 1231px;
+  opacity: 0.6;
+}
+.backgrounds-child12 {
+  position: absolute;
+  top: 0;
+  left: 184px;
+  background: radial-gradient(
+    50% 50%at 50% 50%,
+    #0c23ff 17.77%,
+    #2bc0ff 53.71%,
+    #0064f8 94.86%
+  );
+  width: 1286px;
+  height: 1231px;
+  opacity: 0.3;
+}
+.backgrounds6,
+.patient1 {
+  position: absolute;
+  top: 115px;
+  left: 70px;
+  width: 1470px;
+  height: 1231px;
+}
+.patient1 {
+  top: 0;
+  left: 538px;
+  font-weight: 500;
+  display: inline-block;
+  width: 158px;
+  height: 65px;
+}
+.table-design-child40 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-28xl);
+  background-color: var(--basic);
+  box-shadow: 0 4px 15px rgba(216, 210, 252, 0.64);
+  width: 1201px;
+  height: 767.05px;
+}
+.first-name1 {
+  position: absolute;
+  top: 104.05px;
+  left: 38px;
+  font-weight: 300;
+  display: inline-block;
+  width: 98px;
+  height: 21px;
+}
+.last-name1,
+.table-design-child41 {
+  position: absolute;
+  top: 152.7px;
+  left: 34px;
+  width: 542px;
+  height: 1px;
+}
+.last-name1 {
+  top: 118.25px;
+  left: 629px;
+  font-weight: 300;
+  display: inline-block;
+  width: 89px;
+  height: 24.68px;
+}
+.table-design-child42 {
+  position: absolute;
+  top: 152.7px;
+  left: 625px;
+  width: 532px;
+  height: 1px;
+  opacity: 0.6;
+}
+.mobile-number1 {
+  position: absolute;
+  top: 200.5px;
+  left: 629px;
+  font-weight: 300;
+  display: inline-block;
+  width: 122px;
+  height: 24.68px;
+}
+.table-design-child43 {
+  position: absolute;
+  top: 234.96px;
+  left: 625px;
+  width: 252px;
+  height: 1px;
+  opacity: 0.6;
+}
+.age1 {
+  position: absolute;
+  top: 200.5px;
+  left: 910px;
+  font-weight: 300;
+  display: inline-block;
+  width: 43px;
+  height: 24.68px;
+}
+.table-design-child44 {
+  position: absolute;
+  top: 234.96px;
+  left: 906px;
+  width: 252px;
+  height: 1px;
+  opacity: 0.6;
+}
+.blood-group1 {
+  position: absolute;
+  top: 282.76px;
+  left: 629px;
+  font-weight: 300;
+  display: inline-block;
+  width: 103px;
+  height: 24.68px;
+}
+.table-design-child45 {
+  position: absolute;
+  top: 317.22px;
+  left: 625px;
+  width: 252px;
+  height: 1px;
+  opacity: 0.6;
+}
+.date-of-birth1 {
+  position: absolute;
+  top: 282.76px;
+  left: 910px;
+  font-weight: 300;
+  display: inline-block;
+  width: 104px;
+  height: 24.68px;
+}
+.table-design-child46 {
+  position: absolute;
+  top: 317.22px;
+  left: 906px;
+  width: 252px;
+  height: 1px;
+  opacity: 0.6;
+}
+.cccdpassport1,
+.gender1 {
+  position: absolute;
+  top: 282.76px;
+  left: 39px;
+  font-weight: 300;
+  display: inline-block;
+  width: 65px;
+  height: 24.68px;
+}
+.cccdpassport1 {
+  top: 365.05px;
+  left: 38px;
+  width: 130px;
+  height: 25px;
+}
+.table-design-child47 {
+  position: absolute;
+  top: 317.22px;
+  left: 35px;
+  width: 252px;
+  height: 1px;
+  opacity: 0.6;
+}
+.marital-status1 {
+  position: absolute;
+  top: 282.76px;
+  left: 320px;
+  font-weight: 300;
+  display: inline-block;
+  width: 116px;
+  height: 24.68px;
+}
+.table-design-child48 {
+  position: absolute;
+  top: 317.22px;
+  left: 316px;
+  width: 252px;
+  height: 1px;
+  opacity: 0.6;
+}
+.email2 {
+  position: absolute;
+  top: 200.5px;
+  left: 38px;
+  font-weight: 300;
+  display: inline-block;
+  width: 58px;
+  height: 24.68px;
+}
+.table-design-child49 {
+  position: absolute;
+  top: 234.96px;
+  left: 34px;
+  width: 542px;
+  height: 1px;
+  opacity: 0.6;
+}
+.address2 {
+  position: absolute;
+  top: 436.99px;
+  left: 38px;
+  font-weight: 300;
+  display: inline-block;
+  width: 98px;
+  height: 24.68px;
+}
+.table-design-child50,
+.table-design-child51 {
+  position: absolute;
+  top: 471.45px;
+  left: 34px;
+  width: 1132px;
+  height: 3.1px;
+  opacity: 0.6;
+}
+.table-design-child51 {
+  top: 400.55px;
+  width: 542px;
+  height: 1px;
+}
+.submit1,
+.table-design-child52 {
+  position: absolute;
+  left: calc(50% - 96.5px);
+  width: 156px;
+}
+.table-design-child52 {
+  top: calc(50% + 232.53px);
+  border-radius: var(--br-xl);
+  background-color: var(--color-royalblue);
+  box-shadow: 0 4px 15px #ecb4e9;
+  height: 51.41px;
+}
+.submit1 {
+  bottom: 100px;
+  font-size: var(--text-hero-size);
+  display: flex;
+  color: var(--basic);
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  height: 49px;
+}
+.ethnic {
+  position: absolute;
+  top: 367.05px;
+  left: 629px;
+  font-weight: 300;
+  display: inline-block;
+  width: 80px;
+  height: 25px;
+}
+.table-design-child53 {
+  position: absolute;
+  top: 400.54px;
+  left: 625px;
+  width: 533px;
+  height: 2.01px;
+  opacity: 0.6;
+}
+.add-patient-information {
+  position: absolute;
+  top: 32.05px;
+  left: 34px;
+  font-size: var(--font-size-5xl);
+  font-weight: 500;
+  color: var(--color-darkslateblue-100);
+  display: inline-block;
+  width: 353px;
+  height: 37px;
+}
+.table-design-child54 {
+  position: absolute;
+  top: 50.38px;
+  left: 1038px;
+  border-radius: var(--br-xl);
+  background-color: var(--color-darkorchid-100);
+  width: 130px;
+  height: 49.35px;
+}
+.patient-list {
+  position: absolute;
+  top: 50.05px;
+  left: 1038px;
+  font-size: var(--text-body-size);
+  font-weight: 600;
+  color: var(--basic);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 128px;
+  height: 50px;
+}
+.table-design11 {
+  position: absolute;
+  top: 71.95px;
+  left: 0;
+  width: 1201px;
+  height: 767.05px;
+  font-size: var(--font-size-base);
+  color: var(--color-darkslateblue-300);
+}
+.mid-content-section9 {
+  position: absolute;
+  top: 283px;
+  left: 296px;
+  width: 1201px;
+  height: 839px;
+  text-align: left;
+}
+.patient-child,
+.patient-item {
+  position: absolute;
+  top: 175px;
+  left: 1449px;
+  border-radius: var(--br-xl);
+  background-color: var(--basic);
+  box-shadow: 0 4px 15px rgba(216, 210, 252, 0.64);
+  width: 48px;
+  height: 48px;
+}
+.patient-item {
+  left: 1389px;
+}
+.notifications-1-icon6,
+.user-1-icon6 {
+  position: absolute;
+  top: 185px;
+  left: 1400px;
+  width: 26px;
+  height: 26px;
+  object-fit: cover;
+}
+.notifications-1-icon6 {
+  top: 188px;
+  left: 1462px;
+}
+.calendar-1-icon1,
+.down-arrow-1-icon1,
+.down-arrow-2-icon2 {
+  position: absolute;
+  top: 642px;
+  left: 567px;
+  width: 16px;
+  height: 16px;
+  object-fit: cover;
+  opacity: 0.5;
+}
+.calendar-1-icon1,
+.down-arrow-2-icon2 {
+  left: 852px;
+}
+.calendar-1-icon1 {
+  top: 633px;
+  left: 1430px;
+  width: 24px;
+  height: 24px;
+  opacity: 0.3;
+}
+.hospital-1-icon6 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 177px;
+  height: 115px;
+  object-fit: cover;
+}
+.pital8 {
+  color: var(--color-black);
+}
+.hospital-txt6 {
+  line-break: anywhere;
+  width: 100%;
+}
+.hospital10 {
+  position: absolute;
+  top: 77px;
+  left: 100px;
+  letter-spacing: 0.1em;
+  line-height: 50px;
+  display: flex;
+  align-items: center;
+  width: 265px;
+}
+.hospital-1-parent4 {
+  position: absolute;
+  top: 115px;
+  left: 264px;
+  width: 365px;
+  height: 127px;
+  font-size: var(--h3-size);
+  color: var(--color-mediumblue);
+}
+.sidebar-child34 {
+  position: absolute;
+  top: 9px;
+  left: 23px;
+  border-radius: 50%;
+  background-color: var(--basic);
+  box-shadow: 0 4px 15px 1px rgba(216, 210, 252, 0.64);
+  width: 70px;
+  height: 70px;
+}
+.man-1-icon6 {
+  position: absolute;
+  top: 0;
+  left: 21px;
+  width: 75px;
+  height: 75px;
+  object-fit: cover;
+}
+.sidebar-child35,
+.sidebar-child36,
+.sidebar-child37,
+.sidebar-child38,
+.sidebar-child39,
+.sidebar-child40,
+.sidebar-child41,
+.sidebar-child42 {
+  position: absolute;
+  top: 180px;
+  left: 29px;
+  border-radius: var(--br-xl);
+  background-color: var(--basic);
+  box-shadow: 0 4px 15px rgba(216, 210, 252, 0.64);
+  width: 64px;
+  height: 64px;
+}
+.sidebar-child36,
+.sidebar-child37,
+.sidebar-child38,
+.sidebar-child39,
+.sidebar-child40,
+.sidebar-child41,
+.sidebar-child42 {
+  top: 303px;
+  left: 28px;
+}
+.sidebar-child37,
+.sidebar-child38,
+.sidebar-child39,
+.sidebar-child40,
+.sidebar-child41,
+.sidebar-child42 {
+  top: 426px;
+  left: 26px;
+  width: 66px;
+}
+.sidebar-child38,
+.sidebar-child39,
+.sidebar-child40,
+.sidebar-child41,
+.sidebar-child42 {
+  top: 546px;
+  left: 25px;
+  width: 64px;
+}
+.sidebar-child39,
+.sidebar-child40,
+.sidebar-child41,
+.sidebar-child42 {
+  top: 667px;
+  left: 23px;
+}
+.sidebar-child40,
+.sidebar-child41,
+.sidebar-child42 {
+  top: 935px;
+}
+.sidebar-child41,
+.sidebar-child42 {
+  top: 790px;
+}
+.sidebar-child42 {
+  top: 18px;
+  left: 119px;
+  border-radius: var(--br-5xs);
+  width: 32px;
+  height: 32px;
+  opacity: 0.5;
+}
+.right-arrows-1-icon7 {
+  position: absolute;
+  top: 25px;
+  left: 127px;
+  width: 18px;
+  height: 18px;
+  object-fit: cover;
+}
+.dashboard-icon-child21 {
+  top: 0;
+  left: 0;
+  border-radius: var(--br-7xs);
+  background-color: var(--basic);
+}
+.dashboard-icon-child21,
+.dashboard-icon-child22,
+.dashboard-icon-child23,
+.dashboard-icon-child24 {
+  position: absolute;
+  border: 2px solid var(--color-darkslateblue-100);
+  box-sizing: border-box;
+  width: 14px;
+  height: 14px;
+}
+.dashboard-icon-child22 {
+  top: 19px;
+  left: 0;
+  border-radius: var(--br-7xs);
+  background-color: var(--basic);
+}
+.dashboard-icon-child23,
+.dashboard-icon-child24 {
+  left: 19px;
+}
+.dashboard-icon-child23 {
+  top: 0;
+  border-radius: var(--br-7xs);
+  background-color: var(--basic);
+}
+.dashboard-icon-child24 {
+  top: 19px;
+  border-radius: 50%;
+  background-color: var(--color-mistyrose);
+}
+.dashboard-icon6 {
+  position: absolute;
+  top: 194px;
+  left: 43px;
+  width: 33px;
+  height: 33px;
+}
+.appointment-1-icon6,
+.power-2-icon6,
+.setting-lines-1-icon6,
+.team-1-icon6 {
+  position: absolute;
+  top: 322px;
+  left: 48px;
+  width: 26px;
+  height: 26px;
+  object-fit: cover;
+}
+.power-2-icon6,
+.setting-lines-1-icon6,
+.team-1-icon6 {
+  top: 446px;
+  left: 47px;
+}
+.power-2-icon6,
+.team-1-icon6 {
+  top: 958px;
+  left: 44px;
+}
+.team-1-icon6 {
+  top: 564px;
+  left: 43px;
+  width: 27px;
+  height: 27px;
+}
+.doctor-2-icon7,
+.security-payment-2-icon6 {
+  position: absolute;
+  top: 683px;
+  left: 44px;
+  width: 26px;
+  height: 26px;
+  object-fit: cover;
+}
+.security-payment-2-icon6 {
+  top: 808px;
+  left: 41px;
+  width: 29px;
+  height: 29px;
+}
+.admin6,
+.sarah-smith6 {
+  margin: 0;
+}
+.admin6 {
+  text-transform: uppercase;
+}
+.sarah-smith-admin-container6 {
+  position: absolute;
+  top: 79px;
+  left: 0;
+  line-height: 24px;
+  font-weight: 900;
+}
+.sidebar6 {
+  position: absolute;
+  top: 184px;
+  left: 103px;
+  width: 151px;
+  height: 999px;
+  font-size: var(--text-hero-size);
+  color: var(--color-darkslateblue-100);
+}
+.patient {
+  position: relative;
+  background: linear-gradient(
+    118.7deg,
+    #d8d2fc,
+    #d8d2fc,
+    #d8d2fc 0.01%,
+    #fde2e0 28.35%,
+    #e6e4ea 58.79%,
+    #e0e9f4 99.99%,
+    rgba(230, 225, 232, 0),
+    #e0e9f4
+  );
+  width: 100%;
+  height: 1405px;
+  overflow: hidden;
+  text-align: center;
+  font-size: var(--font-size-23xl);
+  color: var(--color-black);
+  font-family: var(--font-kanit);
+}

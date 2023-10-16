@@ -1,0 +1,247 @@
+.mon1,
+.sun,
+.tue1,
+.wed1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.mon1,
+.tue1,
+.wed1 {
+  left: 50px;
+}
+.tue1,
+.wed1 {
+  left: 100px;
+}
+.wed1 {
+  left: 150px;
+}
+.div66,
+.fri1,
+.sat1,
+.thu1 {
+  position: absolute;
+  top: 0;
+  left: 200px;
+}
+.div66,
+.fri1,
+.sat1 {
+  left: 250px;
+}
+.div66,
+.sat1 {
+  left: 300px;
+}
+.div66 {
+  top: 40px;
+  left: 110px;
+  font-weight: 300;
+}
+.div67,
+.div68,
+.div69,
+.div70,
+.div71,
+.div72,
+.div73 {
+  position: absolute;
+  top: 40px;
+  left: 160px;
+  font-weight: 300;
+}
+.div68,
+.div69,
+.div70,
+.div71,
+.div72,
+.div73 {
+  left: 210px;
+}
+.div69,
+.div70,
+.div71,
+.div72,
+.div73 {
+  left: 257px;
+}
+.div70,
+.div71,
+.div72,
+.div73 {
+  left: 309px;
+}
+.div71,
+.div72,
+.div73 {
+  top: 80px;
+  left: 110px;
+}
+.div72,
+.div73 {
+  left: 160px;
+}
+.div73 {
+  left: 13px;
+  display: inline-block;
+  width: 14px;
+}
+.div74,
+.div75,
+.div76,
+.div77,
+.div78,
+.div79,
+.div80 {
+  position: absolute;
+  top: 80px;
+  left: 63px;
+  font-weight: 300;
+}
+.div75,
+.div76,
+.div77,
+.div78,
+.div79,
+.div80 {
+  left: 210px;
+}
+.div76,
+.div77,
+.div78,
+.div79,
+.div80 {
+  left: 257px;
+}
+.div77,
+.div78,
+.div79,
+.div80 {
+  left: 309px;
+}
+.div78,
+.div79,
+.div80 {
+  top: 120px;
+  left: 110px;
+}
+.div79,
+.div80 {
+  left: 160px;
+}
+.div80 {
+  left: 13px;
+  display: inline-block;
+  width: 14px;
+}
+.div81,
+.div82,
+.div83,
+.div84,
+.div85,
+.div86 {
+  position: absolute;
+  top: 120px;
+  left: 63px;
+  font-weight: 300;
+}
+.div82,
+.div83,
+.div84,
+.div85,
+.div86 {
+  left: 210px;
+}
+.div83,
+.div84,
+.div85,
+.div86 {
+  left: 257px;
+}
+.div84,
+.div85,
+.div86 {
+  left: 309px;
+}
+.div85,
+.div86 {
+  top: 160px;
+  left: 110px;
+}
+.div86 {
+  left: 160px;
+}
+.div87 {
+  left: 13px;
+  display: inline-block;
+  width: 21px;
+}
+.div87,
+.div88,
+.div89,
+.div90,
+.div91,
+.div92 {
+  position: absolute;
+  top: 160px;
+  font-weight: 300;
+}
+.div88 {
+  left: 63px;
+  display: inline-block;
+  width: 14px;
+}
+.div89,
+.div90,
+.div91,
+.div92 {
+  left: 210px;
+}
+.div90,
+.div91,
+.div92 {
+  left: 257px;
+}
+.div91,
+.div92 {
+  left: 309px;
+}
+.div92 {
+  top: 200px;
+  left: 110px;
+}
+.div93 {
+  left: 160px;
+}
+.div93,
+.div94,
+.div95,
+.div96 {
+  position: absolute;
+  top: 200px;
+  font-weight: 300;
+}
+.div94 {
+  left: 13px;
+  display: inline-block;
+  width: 21px;
+  height: 47px;
+}
+.div95,
+.div96 {
+  left: 63px;
+}
+.div96 {
+  left: 210px;
+}
+.calendar {
+  position: relative;
+  width: 100%;
+  height: 247px;
+  text-align: left;
+  font-size: var(--font-size-base);
+  color: var(--color-darkslateblue-100);
+  font-family: var(--font-kanit);
+}

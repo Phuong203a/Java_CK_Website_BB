@@ -1,0 +1,1101 @@
+.btn-appointment:hover{
+  background: rgb(208, 208, 234);
+}
+.button-login3:hover{
+  background: rgb(170, 177, 193);
+  color: rgb(0, 0, 0);
+}
+.button-login1:hover{
+  background: rgb(170, 177, 193);
+  color: rgb(0, 0, 0);
+}
+.button-login:hover{
+  background: rgb(170, 177, 193);
+  color: rgb(0, 0, 0);
+}
+.choose-doctor-child:hover{
+  background: rgb(200, 215, 251);
+  color: rgb(0, 0, 0);
+}
+.footer-child,
+.home-child {
+  position: absolute;
+  top: 0;
+  width: 1440px;
+}
+.home-child {
+  left: 0;
+  background-color: #eddfdf;
+  height: 118px;
+  display: none;
+}
+.footer-child {
+  left: calc(50% - 720px);
+  background-color: var(--color-azure);
+  height: 412px;
+}
+.menus {
+  top: 40px;
+  left: 728px;
+  font-size: var(--text-hero-size);
+  line-height: 50px;
+  font-weight: 600;
+  text-align: center;
+  width: 72px;
+  height: 46.53px;
+}
+.get-medical-checkup,
+.menus,
+.our-hospital-tries {
+  position: absolute;
+  letter-spacing: 0.05em;
+  text-transform: capitalize;
+  display: inline-block;
+}
+.get-medical-checkup {
+  top: 31px;
+  left: 944px;
+  font-size: var(--text-hero-size);
+  line-height: 50px;
+  font-weight: 600;
+  width: 407px;
+  height: 35.87px;
+}
+.our-hospital-tries {
+  top: 152.26px;
+  left: 82px;
+  line-height: 191%;
+  color: var(--color-darkslategray-100);
+  width: 540px;
+  height: 95px;
+}
+.pital {
+  color: var(--color-black);
+}
+.hospital,
+.logo-child {
+  position: relative;
+  z-index: 1;
+}
+.logo-child {
+  border-radius: 50%;
+  background-color: var(--color-gray-100);
+  width: 4px;
+  height: 3.73px;
+  z-index: 0;
+  margin-left: -5px;
+}
+.logo {
+  position: absolute;
+  top: 97px;
+  left: 82px;
+  width: 97px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  text-align: center;
+  color: var(--color-dodgerblue-100);
+}
+.blank-line {
+  margin: 0;
+}
+.about,
+.content,
+.service {
+  position: absolute;
+  top: 217px;
+  left: 735px;
+  letter-spacing: 0.05em;
+  line-height: 156%;
+  text-transform: capitalize;
+  display: inline-block;
+  width: 82px;
+  height: 30px;
+}
+.about,
+.service {
+  top: 304px;
+  width: 71px;
+  height: 26.17px;
+}
+.about {
+  top: 141px;
+  text-align: center;
+  width: 58px;
+}
+.group-child {
+  border-radius: var(--br-9xs);
+  background-color: var(--basic);
+}
+.group-child,
+.rectangle-wrapper {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.akar-iconstwitter-fill {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  width: 16px;
+  height: 16px;
+  overflow: hidden;
+}
+.group-container,
+.group-div {
+  position: relative;
+  width: 32px;
+  height: 32px;
+}
+.group-div {
+  box-shadow: var(--nav-shadow);
+}
+.vector-icon {
+  position: absolute;
+  height: 52.63%;
+  width: 52.63%;
+  top: 23.68%;
+  right: 23.68%;
+  bottom: 23.69%;
+  left: 23.69%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.group-parent {
+  position: absolute;
+  top: 282.16px;
+  left: 80px;
+  width: 272px;
+  height: 30.05px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 16px;
+}
+.footer-inner,
+.footer-item {
+  position: absolute;
+  top: 134px;
+  left: 944px;
+  border-radius: var(--br-8xs);
+  background-color: var(--color-darkslategray-200);
+  width: 407px;
+  height: 41px;
+}
+.footer-inner {
+  top: 206px;
+}
+.enter-your-email {
+  top: 134px;
+  left: 958px;
+  font-size: var(--font-size-base);
+  line-height: 50px;
+  font-weight: 600;
+  color: var(--color-gray-200);
+  display: inline-block;
+  width: 309px;
+  height: 33px;
+}
+.check-now,
+.content2,
+.enter-your-email {
+  position: absolute;
+  letter-spacing: 0.05em;
+  text-transform: capitalize;
+}
+.content2 {
+  top: 205px;
+  left: 958px;
+  font-size: var(--font-size-base);
+  line-height: 50px;
+  font-weight: 600;
+  color: var(--color-gray-200);
+  display: inline-block;
+  width: 318px;
+  height: 38px;
+}
+.check-now {
+  margin: 0 !important;
+  top: 13.5px;
+  left: 20px;
+  font-weight: 500;
+  z-index: 0;
+}
+.btn-about-us,
+.button-login {
+  position: absolute;
+  width: 146px;
+  height: 53px;
+}
+.button-login {
+  top: 0;
+  left: 0;
+  border-radius: var(--br-8xs);
+  background-color: var(--color-dodgerblue-100);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: var(--padding-smi) var(--padding-xl);
+  box-sizing: border-box;
+}
+.btn-about-us {
+  top: 297px;
+  left: 1070px;
+  color: var(--basic);
+}
+.footer,
+.testimonial-child {
+  position: absolute;
+  top: 4723px;
+  left: calc(50% - 720px);
+  width: 1440px;
+  height: 412px;
+}
+.testimonial-child {
+  top: 0;
+  height: 1367px;
+}
+.action-contact-us-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--color-darkslategray-100);
+  width: 1280px;
+  height: 348px;
+}
+.btn-about-us1,
+.button-login1 {
+  position: absolute;
+  width: 216px;
+  height: 54px;
+}
+.button-login1 {
+  top: 0;
+  left: 0;
+  border-radius: var(--br-8xs);
+  background-color: var(--color-dodgerblue-100);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: var(--padding-smi) var(--padding-xl);
+  box-sizing: border-box;
+}
+.btn-about-us1 {
+  top: 220px;
+  left: 990px;
+}
+.lets-consult-your,
+.we-will-provide {
+  position: absolute;
+  top: 246px;
+  left: 74px;
+  letter-spacing: 0.05em;
+  line-height: 156%;
+  text-transform: capitalize;
+  font-weight: 500;
+}
+.lets-consult-your {
+  top: 74px;
+  left: 82px;
+  font-size: var(--h3-size);
+  line-height: 50px;
+  font-weight: 600;
+  display: inline-block;
+  width: 677px;
+}
+.action-contact-us {
+  position: absolute;
+  top: 1019px;
+  left: 80px;
+  width: 1280px;
+  height: 348px;
+  color: var(--basic);
+}
+.testimonials,
+.what-they-say {
+  position: absolute;
+  top: 170px;
+  left: calc(50% - 640px);
+  font-size: var(--h3-size);
+  letter-spacing: 0.05em;
+  line-height: 50px;
+  text-transform: capitalize;
+  font-weight: 600;
+  display: inline-block;
+  width: 632px;
+}
+.testimonials {
+  top: 100px;
+  font-size: var(--text-hero-size);
+  width: 295px;
+}
+.mask-group-icon,
+.testi-1-child {
+  position: absolute;
+  left: 0;
+  width: 632px;
+}
+.mask-group-icon {
+  top: 0;
+  height: 386px;
+  object-fit: cover;
+}
+.testi-1-child {
+  top: 386px;
+  border-radius: var(--br-8xs);
+  background-color: var(--color-azure);
+  height: 206px;
+}
+.john-doe,
+.the-service-i {
+  position: absolute;
+  left: 21px;
+}
+.the-service-i {
+  top: 446px;
+  letter-spacing: 0.03em;
+  line-height: 144%;
+  font-weight: 500;
+  display: inline-block;
+  width: 472px;
+}
+.john-doe {
+  top: 410px;
+  font-size: var(--text-hero-size);
+  letter-spacing: 0.05em;
+  line-height: 26.5px;
+  text-transform: capitalize;
+  color: var(--color-black);
+}
+.vector-icon1,
+.vector-icon2 {
+  position: relative;
+  height: 18.89px;
+}
+.vector-icon1 {
+  flex: 1;
+  max-width: 100%;
+  overflow: hidden;
+}
+.vector-icon2 {
+  width: 20px;
+}
+.stars,
+.testi-1 {
+  position: absolute;
+}
+.stars {
+  top: 544px;
+  left: 258px;
+  width: 116px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-9xs);
+}
+.testi-1 {
+  top: 325px;
+  left: 80px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  width: 632px;
+  height: 592px;
+}
+.mask-group-icon1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 652px;
+  height: 386px;
+  object-fit: cover;
+}
+.stars1 {
+  position: absolute;
+  top: 544px;
+  left: 268px;
+  width: 116px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-9xs);
+}
+.testi-2 {
+  position: absolute;
+  top: 325px;
+  left: 728px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  width: 652px;
+  height: 592px;
+}
+.our-doctors-child,
+.testimonial {
+  position: absolute;
+  left: calc(50% - 720px);
+  width: 1440px;
+}
+.testimonial {
+  top: 3343px;
+  height: 1367px;
+  color: var(--color-darkslategray-100);
+}
+.our-doctors-child {
+  top: 0;
+  background-color: var(--color-lightcyan);
+  height: 883px;
+}
+.our-doctors1,
+.visit-our-professional {
+  position: absolute;
+  top: 170px;
+  left: calc(50% - 316px);
+  font-size: var(--h3-size);
+  letter-spacing: 0.05em;
+  line-height: 50px;
+  text-transform: capitalize;
+  font-weight: 600;
+  display: inline-block;
+  width: 632px;
+}
+.our-doctors1 {
+  top: 100px;
+  left: calc(50% - 158px);
+  font-size: var(--text-hero-size);
+  width: 316px;
+}
+.mask-group-icon2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 308px;
+  height: 377px;
+  object-fit: cover;
+}
+.specialist-4-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-8xs);
+  background-color: var(--basic);
+  width: 260px;
+  height: 139px;
+}
+.bxlpinterest-alt-icon,
+.eisc-facebook-icon {
+  position: absolute;
+  top: 14px;
+  left: 20px;
+  width: 16px;
+  height: 16px;
+  overflow: hidden;
+}
+.bxlpinterest-alt-icon {
+  left: 49.79px;
+}
+.ant-designdribbble-outlined-icon,
+.ant-designinstagram-outlined-icon {
+  position: absolute;
+  top: 14px;
+  left: 79.58px;
+  width: 16px;
+  height: 16px;
+  overflow: hidden;
+}
+.ant-designinstagram-outlined-icon {
+  left: 109.37px;
+}
+.dentist,
+.muhammad-ali-syahputra {
+  position: absolute;
+  top: 101px;
+  left: 20px;
+  letter-spacing: 0.05em;
+  line-height: 156%;
+  text-transform: capitalize;
+}
+.muhammad-ali-syahputra {
+  top: 39px;
+  left: 15px;
+  font-size: var(--text-hero-size);
+  line-height: 26.5px;
+  display: inline-block;
+  text-align: left;
+  width: 240px;
+}
+.doctor-4,
+.specialist-4 {
+  position: absolute;
+  top: 308px;
+  left: 24px;
+  width: 260px;
+  height: 139px;
+}
+.doctor-4 {
+  top: 352px;
+  left: 1052px;
+  width: 308px;
+  height: 447px;
+}
+.dr-nadya-navira {
+  position: absolute;
+  top: 43px;
+  left: 20px;
+  font-size: var(--text-hero-size);
+  letter-spacing: 0.05em;
+  line-height: 26.5px;
+  text-transform: capitalize;
+  display: inline-block;
+  text-align: left;
+  width: 240px;
+}
+.specialist-3 {
+  position: absolute;
+  top: 308px;
+  left: 30px;
+  width: 260px;
+  height: 139px;
+}
+.doctor-3,
+.mask-group-icon4 {
+  position: absolute;
+  width: 308px;
+}
+.doctor-3 {
+  top: 352px;
+  left: 728px;
+  height: 447px;
+}
+.mask-group-icon4 {
+  top: 0;
+  left: calc(50% - 154px);
+  height: 377px;
+  object-fit: cover;
+}
+.specialist-2-child {
+  position: absolute;
+  top: 0;
+  left: calc(50% - 130px);
+  border-radius: var(--br-8xs);
+  background-color: var(--basic);
+  width: 260px;
+  height: 139px;
+}
+.bxlpinterest-alt-icon2,
+.eisc-facebook-icon2 {
+  position: absolute;
+  top: 14px;
+  left: calc(50% - 110px);
+  width: 16px;
+  height: 16px;
+  overflow: hidden;
+}
+.bxlpinterest-alt-icon2 {
+  left: calc(50% - 80.21px);
+}
+.ant-designdribbble-outlined-icon2,
+.ant-designinstagram-outlined-icon2 {
+  position: absolute;
+  top: 14px;
+  left: calc(50% - 50.42px);
+  width: 16px;
+  height: 16px;
+  overflow: hidden;
+}
+.ant-designinstagram-outlined-icon2 {
+  left: calc(50% - 20.63px);
+}
+.antonius-jansen,
+.pediatric {
+  position: absolute;
+  top: 101px;
+  left: calc(50% - 114px);
+  letter-spacing: 0.05em;
+  line-height: 156%;
+  text-transform: capitalize;
+}
+.antonius-jansen {
+  top: 43px;
+  left: calc(50% - 110px);
+  font-size: var(--text-hero-size);
+  line-height: 26.5px;
+  display: inline-block;
+  text-align: left;
+  width: 240px;
+}
+.doctor-2,
+.specialist-2 {
+  position: absolute;
+  top: 307px;
+  left: calc(50% - 130px);
+  width: 260px;
+  height: 139px;
+}
+.doctor-2 {
+  top: 352px;
+  left: calc(50% - 316px);
+  width: 308px;
+  height: 446px;
+}
+.dr-moeharman-sp {
+  position: absolute;
+  top: 39px;
+  left: 20px;
+  font-size: var(--text-hero-size);
+  letter-spacing: 0.05em;
+  line-height: 26.5px;
+  text-transform: capitalize;
+  display: inline-block;
+  text-align: left;
+  width: 240px;
+}
+.doctor-1 {
+  position: absolute;
+  top: 352px;
+  left: 80px;
+  width: 308px;
+  height: 447px;
+}
+.about-us-child,
+.our-doctors {
+  position: absolute;
+  left: calc(50% - 720px);
+  width: 1440px;
+}
+.our-doctors {
+  top: 2460px;
+  height: 883px;
+  text-align: center;
+  font-size: var(--font-size-base);
+  color: var(--color-darkslategray-100);
+}
+.about-us-child {
+  top: 0;
+  height: 784px;
+}
+.btn-about-us2 {
+  position: absolute;
+  top: 548px;
+  left: 728px;
+  width: 216px;
+  height: 54px;
+  color: var(--basic);
+}
+.about-us-item {
+  position: absolute;
+  top: 109px;
+  left: 90px;
+  border-radius: 316px;
+  background-color: rgba(0, 153, 255, 0.04);
+  width: 602px;
+  height: 602px;
+}
+.a34ffa093ff15-1-icon {
+  position: absolute;
+  top: 73px;
+  left: 80px;
+  width: 602px;
+  height: 601px;
+  object-fit: cover;
+}
+.about-us1 {
+  position: absolute;
+  top: 133px;
+  left: 728px;
+  font-size: var(--text-hero-size);
+  letter-spacing: 0.05em;
+  line-height: 50px;
+  text-transform: capitalize;
+  font-weight: 600;
+}
+.this-profile-describes {
+  position: absolute;
+  top: 285px;
+  left: 728px;
+  letter-spacing: 0.03em;
+  line-height: 183.5%;
+  font-weight: 500;
+  color: var(--color-darkgray);
+  display: inline-block;
+  width: 632px;
+}
+.we-help-your {
+  position: absolute;
+  top: 203px;
+  left: 728px;
+  font-size: var(--h3-size);
+  letter-spacing: 0.05em;
+  line-height: 50px;
+  text-transform: capitalize;
+  font-weight: 600;
+}
+.about-us,
+.step-check-child {
+  position: absolute;
+  left: calc(50% - 720px);
+  width: 1440px;
+  height: 784px;
+}
+.about-us {
+  top: 1694px;
+  color: var(--color-darkslategray-100);
+}
+.step-check-child {
+  top: 0;
+  background-color: var(--color-lightcyan);
+}
+.our-services,
+.step-easy-we {
+  position: absolute;
+  letter-spacing: 0.05em;
+  line-height: 50px;
+  text-transform: capitalize;
+  font-weight: 600;
+  display: inline-block;
+}
+.step-easy-we {
+  top: 177px;
+  left: calc(50% - 318px);
+  font-size: var(--h3-size);
+  width: 632px;
+}
+.our-services {
+  top: 107px;
+  left: calc(50% - 160px);
+  width: 316px;
+}
+.choose-doctor-child {
+  position: absolute;
+  top: 68px;
+  left: calc(50% - 154px);
+  border-radius: var(--br-8xs);
+  background-color: var(--basic);
+  width: 308px;
+  height: 229px;
+}
+.and-choose-doctor,
+.doctor {
+  position: absolute;
+  top: 145px;
+  left: calc(50% - 119px);
+  letter-spacing: 0.05em;
+  line-height: 156%;
+  text-transform: capitalize;
+  font-weight: 600;
+  display: inline-block;
+  width: 238px;
+}
+.and-choose-doctor {
+  top: 191px;
+  left: calc(50% - 99px);
+  font-size: var(--text-body-size);
+  font-weight: 500;
+  color: var(--color-darkgray);
+  width: 194px;
+}
+.doctor-2-icon {
+  position: absolute;
+  top: 0;
+  left: calc(50% - 56px);
+  border-radius: var(--br-8xs);
+  width: 111px;
+  height: 111px;
+  object-fit: cover;
+}
+.choose-doctor {
+  position: absolute;
+  top: 355px;
+  left: calc(50% + 258px);
+  width: 308px;
+  height: 297px;
+}
+.healthcare-2-icon {
+  position: absolute;
+  top: 0;
+  left: calc(50% - 57px);
+  border-radius: var(--br-8xs);
+  width: 111px;
+  height: 111px;
+  object-fit: cover;
+}
+.choose-poli {
+  position: absolute;
+  top: 355px;
+  left: calc(50% - 137px);
+  width: 308px;
+  height: 297px;
+}
+.healthcare-1-icon {
+  position: absolute;
+  top: 0;
+  left: calc(50% - 62px);
+  border-radius: var(--br-8xs);
+  width: 124px;
+  height: 111px;
+  object-fit: cover;
+}
+.choose-date,
+.step-check {
+  position: absolute;
+  top: 355px;
+  left: calc(50% - 532px);
+  width: 308px;
+  height: 297px;
+}
+.step-check {
+  top: 910px;
+  left: calc(50% - 720px);
+  width: 1440px;
+  height: 784px;
+  text-align: center;
+  font-size: var(--text-hero-size);
+  color: var(--color-darkslategray-100);
+}
+.image-hero-icon {
+  position: absolute;
+  top: 142px;
+  left: 728px;
+  width: 631.92px;
+  height: 685.78px;
+  object-fit: cover;
+}
+.title-hero-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  background-color: rgba(0, 153, 255, 0.12);
+  filter: blur(200px);
+  width: 752px;
+  height: 769px;
+}
+.btn-check-now,
+.button-login3 {
+  position: absolute;
+  width: 200px;
+  height: 54px;
+}
+.button-login3 {
+  top: calc(50% - 27px);
+  left: 0;
+  border-radius: var(--br-8xs);
+  background-color: var(--color-dodgerblue-100);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: var(--padding-smi) var(--padding-xl);
+  box-sizing: border-box;
+}
+.btn-check-now {
+  top: 534px;
+  left: 412px;
+}
+.check-now-your,
+.we-care-about {
+  position: absolute;
+  top: 288px;
+  left: 412px;
+  font-size: var(--h1-size);
+  letter-spacing: 0.05em;
+  line-height: 61px;
+  text-transform: capitalize;
+  display: inline-block;
+  color: var(--color-darkslategray-100);
+  width: 632px;
+}
+.check-now-your {
+  top: 442px;
+  font-size: var(--text-hero-size);
+  line-height: 156%;
+  font-weight: 500;
+  color: var(--color-darkgray);
+}
+.title-hero-item {
+  position: absolute;
+  top: 58.81px;
+  left: 482.5px;
+  width: 159.91px;
+  height: 171.76px;
+}
+.title-hero,
+.title-hero-inner {
+  position: absolute;
+  top: 637.62px;
+  left: 760.63px;
+  width: 69.9px;
+  height: 75.08px;
+}
+.title-hero {
+  top: 101px;
+  left: -332px;
+  width: 1044px;
+  height: 769px;
+  color: var(--basic);
+}
+.hospital1 {
+  position: relative;
+  letter-spacing: 0.05em;
+  line-height: 40px;
+  text-transform: uppercase;
+  display: -webkit-inline-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  mix-blend-mode: linear-burn;
+  z-index: 0;
+}
+.logo-item {
+  position: absolute;
+  margin: 0 !important;
+  top: 18px;
+  left: 93px;
+  border-radius: 50%;
+  background-color: var(--color-gray-100);
+  width: 4px;
+  height: 4px;
+  z-index: 1;
+}
+.logo1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 138px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  font-size: 24px;
+}
+.home1,
+.service1 {
+  letter-spacing: 0.05em;
+  text-transform: capitalize;
+  font-weight: 500;
+}
+.home1 {
+  position: absolute;
+  top: 0;
+  left: calc(50% - 35px);
+}
+.service1 {
+  left: calc(50% + 63px);
+}
+.about1,
+.nav,
+.service1 {
+  position: absolute;
+  top: 0;
+}
+.about1 {
+  left: calc(50% - 135px);
+  letter-spacing: 0.05em;
+  text-transform: capitalize;
+  font-weight: 500;
+  text-align: center;
+}
+.nav {
+  height: calc(100% - 36px);
+  bottom: 36px;
+  left: calc(50% - 284px);
+  width: 270px;
+  color: var(--color-black);
+}
+.button-login4 {
+  position: absolute;
+  top: calc(50% - 31px);
+  left: calc(50% - 61px);
+  border-radius: 6px;
+  border: 2px solid var(--color-dodgerblue-100);
+  box-sizing: border-box;
+  width: 122px;
+  height: 62px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: var(--padding-xl);
+}
+.btn-appointment {
+  position: absolute;
+  top: calc(50% - 28.5px);
+  left: calc(50% + 551px);
+  width: 120px;
+  height: 60px;
+}
+.navbar {
+  position: absolute;
+  top: 67px;
+  left: 98px;
+  width: 1342px;
+  height: 63px;
+  color: var(--color-dodgerblue-100);
+}
+.phone-icon-telephone-icon-symb {
+  position: absolute;
+  top: 16px;
+  left: 193px;
+  width: 36px;
+  height: 25px;
+  object-fit: cover;
+}
+.div {
+  position: absolute;
+  top: 11px;
+  left: 244px;
+  letter-spacing: 0.05em;
+  text-transform: capitalize;
+}
+.mail-1-icon {
+  position: absolute;
+  top: 8px;
+  left: 378px;
+  width: 36px;
+  height: 32.73px;
+  object-fit: cover;
+}
+.hospitalgmailcom {
+  position: absolute;
+  top: 11px;
+  left: 425px;
+  letter-spacing: 0.05em;
+  text-transform: capitalize;
+}
+.map-1-icon {
+  position: absolute;
+  top: 10px;
+  left: 685px;
+  width: 22px;
+  height: 28px;
+  object-fit: cover;
+}
+.nguyn-hu-th {
+  position: absolute;
+  top: 14px;
+  left: 723px;
+  letter-spacing: 0.05em;
+  text-transform: capitalize;
+}
+.home {
+  position: relative;
+  background-color: var(--basic);
+  width: 100%;
+  height: 5137px;
+  text-align: left;
+  font-size: var(--text-body-size);
+  color: var(--color-black);
+  font-family: var(--text-hero);
+}
