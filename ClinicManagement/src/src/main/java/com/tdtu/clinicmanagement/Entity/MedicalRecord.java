@@ -4,14 +4,24 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
+
 @Getter
 @Setter
 @Entity
 @Table
-public class healthyRecord {
+public class MedicalRecord  {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long healthyRecordId;
 
-    private 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "patient_id")
+    private Patient patient;
+
+    @OneToMany(mappedBy = "medicalRecord",cascade = CascadeType.ALL)
+    private List<examinationHistory> examinationHistories;
+
+    private String medicalRecordContent;
+
 }

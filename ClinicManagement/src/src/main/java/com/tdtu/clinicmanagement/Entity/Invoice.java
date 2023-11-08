@@ -4,6 +4,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 
 
-public class Invoice {
-
-}
+//@Entity
+//@Table
+//// hoá đơn
+//public class Invoice {
+//
+//}

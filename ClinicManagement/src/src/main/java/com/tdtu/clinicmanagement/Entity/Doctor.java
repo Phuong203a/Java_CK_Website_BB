@@ -38,6 +38,16 @@ public class Doctor {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "doctor")
     private Set<Prescription> prescriptionList = new HashSet<>();
 
+    //feedback of doctor
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "doctor")
+    private Set<FeedBack> feedBacks = new HashSet<>();
 
+    //lịch khám
+    @OneToMany(mappedBy = "doctor", cascade = CascadeType.ALL)
+    private List<examinationSchedule> examinationSchedules;
+
+    // lịch sử khám
+    @OneToMany(mappedBy = "doctor", cascade = CascadeType.ALL)
+    private List<examinationHistory> examinationHistories;
 
 }

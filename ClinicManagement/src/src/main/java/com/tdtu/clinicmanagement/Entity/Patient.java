@@ -5,6 +5,9 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.sql.Date;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 
 @Entity
@@ -44,4 +47,21 @@ public class Patient {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "id_account")
     private Account account;
+
+    //feedback
+    @OneToMany(cascade = CascadeType.ALL, mappedBy ="patient")
+    private List<FeedBack> feedbacks;
+
+    //lịch khám
+    @OneToMany(mappedBy = "patient", cascade = CascadeType.ALL)
+    private List<examinationSchedule> examinationSchedules;
+
+    // lịch sử khám
+    @OneToMany(mappedBy = "patient", cascade = CascadeType.ALL)
+    private List<examinationHistory> examinationHistories;
+
+
+
+    @OneToOne(mappedBy = "patient")
+    private MedicalRecord medicalRecord;
 }
