@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head th:replace="fragment:: head">
+</head>
+<body>
+
+<header th:replace="fragment:: header"></header>
+<!-- end header-->
+
+<div class="clearix"></div>
+
+<article id="body_home">
+
+    <section class="sc_page_header clearfix">
+        <div class="container">
+            <div class="row_pc">
+
+                <div class="clearfix clearfix-100"></div>
+                <div class="icon_page fadeInDown wow"><img src="img/icon_page.png" alt=""/></div>
+                <div class="clearfix clearfix-10"></div>
+                <h2 class="name_page fadeInRightBig wow"><span>Giỏ Hàng</span></h2>
+                <div class="clearfix clearfix-15"></div>
+                <ul class="back_link fadeInUp wow">
+                    <li><a href="">Trang chủ</a></li>
+                    <li><a href="">Sản phẩm</a></li>
+                    <li><a href="">Giỏ Hàng</a></li>
+                </ul>
+                <div class="clearfix clearfix-70"></div>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="clearfix clearfix-70"></div>
+
+    <section class="sc_contact_page clearfix">
+        <div class="container">
+            <div class="row_pc">
+
+                <div class="table-responsive">
+                    <div class="tab_rs_cart clearfix">
+                        <ul class="list_b_cart clearfix">
+                            <li class="active"><img class="icon_cart_b" src="img/icon_cart_b1.png" alt=""/>Giỏ Hàng</li>
+                            <li><img class="icon_cart_b" src="img/icon_cart_b2.png" alt=""/>Thanh toán</li>
+                            <li><img class="icon_cart_b" src="img/icon_cart_b3.png" alt=""/>Thành công</li>
+                        </ul>
+
+                        <div class="clearfix clearfix-50"></div>
+
+                        <table class="table table_cart">
+                            <thead>
+                            <tr>
+                                <th style="width: 230px">Hình ảnh</th>
+                                <th style="width: 240px">Tên món ăn</th>
+                                <th style="width: 300px">Giá</th>
+                                <th style="width: 160px">Số lượng</th>
+                                <th>Tổng</th>
+                                <th><i class="fa fa-close icon_dell_cart"></i></th>
+                            </tr>
+                            </thead>
+                            <tbody class="tbody">
+                                <tr th:each="p : ${listProduct}">
+                                    <td>
+                                    <span class="product-id" hidden th:text="${p.product.id}"></span>
+                                        <a href="" class="img_prod_cart"><img class="w_100" th:src="${p.product.getImageUrl()}" alt=""/></a>
+                                    </td>
+                                    <td><a href="" class="name_prod_cart" th:text="${p.product.getProductName()}"></a></td>
+                                    <td><div class="price_prod_cart" th:text="${p.product.getPrice()}+ đ"></div></td>
+                                    <td>
+                                        <div class="pro-qty">
+                                            <span class="dec qtybtn" disabled onclick="updateQuantity(this, -1)">
+                                                <i class="minus zmdi zmdi-minus">-</i>
+                                            </span>
+                                            <input th:value="${p.getQuantity()}" name="qtybutton" class="cart-plus-minus-box" type="text">
+                                            <span class="inc qtybtn" disabled onclick="updateQuantity(this, 1)"><i class="zmdi zmdi-plus">+</i></span>
+                                        </div>
+                                    </td>
+                                    <td><div class="plus_price_cart" th:text="${p.getTotalPrice()} + đ"></div></td>
+                                    <td><i class="fa fa-close icon_dell_cart" onclick="deleteProduct(this)"></i></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <script src="js/input_cart.js"></script>
+
+                    </div>
+                </div>
+
+                <div class="clearfix clearfix-30"></div>
+
+                <div class="list_butt_cart">
+                    <button class="butt_ttcb" onclick="continueChooseCake()">Tiếp tục chọn bánh</button>
+
+                </div>
+
+                <div class="clearfix clearfix-35"></div>
+                <div class="row">
+                    <div class="col-md-4 hidden-sm hidden-xs"></div>
+                    <div class="col-md-4 col-sm-6 col-xs-6 col-480-12">
+                        <div class="box_plus_price_cart">
+                            <div class="hd_box_plus_price">Tổng Tiền</div>
+                            <div class="clearfix"></div>
+                            <ul class="list_plus_price">
+                                <li>
+                                    <span class="txt_left_p">Tổng cộng:	</span>
+                                    <span class="money-to-pay nb_right_p">120.000đ</span>
+                                </li>
+                            </ul>
+                            <div class="clearfix"></div>
+                            <div class="bottom_box_plus_price">
+                                <button onclick="goToPay()" class="butt_price_p_c">THANH TOÁN</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="clearfix clearfix-50"></div>
+
+
+</article>
+
+<div class="clearfix"></div>
+
+<footer th:replace="fragment :: footer"></footer>
+
+</body>
+
+<script src="/assets/js/Adela/shopping-cart.js"></script>
+</html>
+
+

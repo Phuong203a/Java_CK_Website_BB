@@ -1,0 +1,136 @@
+
+@media (min-width:1200px) /* lg*/ {
+    .row_pc{
+        margin-right: -15px;
+        margin-left: -15px;
+    }
+    .container{
+        width: 1170px;
+        max-width: 100%;
+    }
+    .iteam_slider_main{
+        background-size: 100% 100% !important;
+    }
+    .sc_slider_main .anim-slider{
+        height: 479px;
+    }
+    .sub_prod_detail{
+        padding-left: 70px;
+    }
+    .slider_prod_lq .owl-nav [class*=owl-]{
+        left: -45px;
+    }
+    .slider_prod_lq .owl-nav [class*=owl-]:hover{
+        background: url("../img/lq_priv.png") no-repeat center center;
+        background-size: 100% 100%;
+    }
+    .slider_prod_lq .owl-nav [class*=owl-next]{
+        left: auto;
+        right: -45px;
+    }
+    .slider_prod_lq .owl-nav [class*=owl-next]:hover{
+        background: url("../img/lq_next.png") no-repeat center center;
+        background-size: 100% 100%;
+    }
+
+}
+@media (min-width:1500px) /* lg*/ {
+    .sc_slider_main .anim-slider{
+        height: 500px;
+    }
+}
+@media (min-width:1600px) /* lg*/ {
+    .sc_slider_main .anim-slider{
+        height: 600px;
+    }
+}
+@media (min-width:1900px) /* lg*/ {
+    .sc_slider_main .anim-slider{
+        height: 700px;
+    }
+}
+@media (min-width:992px) and (max-width:1199px) /* md*/{
+    .main_about_page{
+        padding: 50px 15px;
+    }
+}
+
+@media (min-width:768px) and (max-width:991px) /* sm*/{
+    .sc_header_main.fixed{
+        position: relative;
+    }
+    .search_cart_hd{
+        width: 100%;
+        margin: 15px 0px;
+    }
+    .sub_about_page{
+        padding-top: 0px;
+    }
+    .main_about_page{
+         padding: 50px 15px;
+    }
+    .col_left_cate{
+        width: 50%;
+        float: left;
+    }
+}
+
+@media (max-width:767px) /* xs*/{
+    .sc_header_main.fixed{
+        position: relative;
+    }
+    .search_cart_hd{
+        width: 100%;
+        margin: 15px 0px;
+    }
+    .sc_slider_main .anim-slider{
+        height: 300px;
+    }
+    .anim-slide .icon_iteam_slider{
+        top: 14%;
+    }
+    .anim-slide .title_iteam_slider{
+        font-size: 34px;
+    }
+    .main_about_page{
+        padding: 50px 15px;
+    }
+    .col_left_cate{
+        width: 50%;
+        float: left;
+    }
+}
+
+@media (max-width:480px) {
+    .col-480-12{
+        width: 100% !important;
+    }
+    .col-480-6{
+        width: 50% !important;
+    }
+    .hidden-480{
+        display: none !important;
+    }
+    .visible-480{
+        display: block !important;
+    }
+    .sc_slider_main .anim-slider{
+        height: 300px;
+    }
+    .sc_about_adela{
+        background: #ffffff;
+    }
+    .butt_xn,
+    .butt_ttcb{
+        width: 100%;
+    }
+    .col_left_cate{
+        width: 100%;
+        float: left;
+    }
+}
+
+
+.visible-480{
+    display: none;
+}

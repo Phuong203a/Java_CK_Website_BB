@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="fragment:: head" lang="en">
+</head>
+<style>
+
+</style>
+<body>
+
+<header th:replace="fragment:: header"></header>
+<!-- end header-->
+
+<div class="clearix"></div>
+
+<article id="body_home">
+
+    <section class="sc_page_header clearfix">
+        <div class="container">
+            <div class="row_pc">
+
+                <div class="clearfix clearfix-100"></div>
+                <div class="icon_page fadeInDown wow"><img src="img/icon_page.png" alt=""/></div>
+                <div class="clearfix clearfix-10"></div>
+                <h2 class="name_page fadeInRightBig wow"><span>BÁNH MỲ</span></h2>
+                <div class="clearfix clearfix-15"></div>
+                <ul class="back_link fadeInUp wow">
+                    <li><a href="">Trang chủ</a></li>
+                    <li><a href="">Sản phẩm</a></li>
+                </ul>
+                <div class="clearfix clearfix-70"></div>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="clearfix clearfix-60"></div>
+
+    <section class="sc_content_cate clearfix">
+        <div class="container">
+            <div class="row_pc">
+
+                <div class="dropdown dropdown_filters">
+                    <button class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        Filters
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu drop_filters" aria-labelledby="dropdownMenu1">
+                        <li><a href="">Mặc định</a></li>
+                        <li><a href="">Phổ biến</a></li>
+                        <li><a href="">Mua nhiều</a></li>
+                        <li><a href="">Sản phẩm mớ</a></li>
+                        <li><a href="">Khuyến mại</a></li>
+                    </ul>
+                </div>
+
+                <div class="clearfix clearfix-25"></div>
+
+                <div class="hd_page_cate clearfix hidden-sm hidden-xs">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-4 col-xs-6 col-480-12">
+                            <h2 class="tit_list_hd_cate"><span>Sort By</span></h2>
+                            <div class="clearfix clearfix-30"></div>
+                            <ul class="list_hd_cate">
+                                <li><a href="">Mặc định</a></li>
+                                <li><a href="">Phổ biến</a></li>
+                                <li><a href="">Mua nhiều</a></li>
+                                <li><a href="">Sản phẩm mớ</a></li>
+                                <li><a href="">Khuyến mại</a></li>
+                            </ul>
+                            <div class="clearfix clearfix-25"></div>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 col-480-12">
+                            <h2 class="tit_list_hd_cate"><span>Size</span></h2>
+                            <div class="clearfix clearfix-30"></div>
+                            <ul class="list_hd_cate">
+                                <li><a class="all-size-filter" href="">Mọi kích cỡ</a></li>
+                                <li><a class="size-s-filter" href="">Cỡ nhỏ</a></li>
+                                <li><a class="size-m-filter" href="">Cỡ vừa</a></li>
+                                <li><a class="size-l-filter" href="">Cỡ lớn</a></li>
+                            </ul>
+                            <div class="clearfix clearfix-25"></div>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 col-480-12">
+                            <h2 class="tit_list_hd_cate"><span>Price</span></h2>
+                            <div class="clearfix clearfix-30"></div>
+                            <ul class="list_hd_cate">
+                                <li><a class="low-to-high-filter" href="">Thấp - Cao</a></li>
+                                <li><a class="high-to-low-filter" href="">Cao - Thấp</a></li>
+
+                            </ul>
+                            <div class="clearfix clearfix-25"></div>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 col-480-12">
+                            <h2 class="tit_list_hd_cate"><span>Tags</span></h2>
+                            <div class="clearfix clearfix-30"></div>
+                            <div th:each="sub : ${listSubCategory}" class="list_tags_hd_cate">
+                                <a th:href="@{'/api/product/get-product-by-subCategory/' + ${sub}}" th:text="${sub}" onclick="getProductBySubCategory(this)" class="sub-category" ></a>
+
+                            </div>
+                            <div class="clearfix clearfix-25"></div>
+                        </div>
+                    </div>
+                    <div class="clearfix hidden-sm hidden-xs clearfix-100"></div>
+                    <div class="clearfix clearfix-10"></div>
+                </div>
+
+                <div class="clearfix"></div>
+
+                <div class="content_cate_prod clearfix">
+                    <div class="row">
+                        <div class="col-md-9 col-md-push-3 col-sm-12 col-xs-12">
+                            <div class="list_prod">
+                                <div class="row_13">
+                                    <div th:each="product : ${listByCategory}" class="col-md-4 col-sm-4 col-xs-6 col-480-12">
+                                        <div class="row_2">
+                                            <div class="box_prod clearfix">
+                                                <a th:href="@{'/product/get-detail/' + ${product.id}}" class="img_prod fadeInDown wow prod_h_1">
+                                                    <img class="w_100" th:src="${product.imageUrl}" alt="Product Image">
+                                                </a>
+                                                <div class="clearfix"></div>
+                                                <div class="sub_prod clearfix">
+                                                    <div class="price_prod fadeInLeft wow" th:text="${product.price + ' vnđ'}"></div>
+                                                    <h3 class="name_prod fadeInRight wow">
+                                                        <a th:href="@{'/product/get-detail/' + ${product.id}}" th:text="${product.productName}"></a>
+                                                    </h3>
+                                                    <div class="clearfix clearfix-5"></div>
+                                                    <a href="#" th:data-target="${product.id}" class="add_prod_cart fadeInUp wow" onclick="addProductToCart(this)">Thêm vào giỏ hàng +</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                                <ul class="page-number pagination pagination_cate">
+<!--                                    <li  onclick="gotoPage(this)"><a href="#">1</a></li>-->
+                                </ul>
+                                <div class="clearfix clearfix-40"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="clearfix clearfix-25"></div>
+            </div>
+    </section>
+
+
+</article>
+
+<div class="clearfix"></div>
+
+<footer th:replace="fragment :: footer"></footer>
+
+</body>
+
+<script src="/assets/js/Adela/detail_category.js"></script>
+
+</html>
+
+

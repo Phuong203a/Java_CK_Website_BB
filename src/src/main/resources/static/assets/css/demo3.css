@@ -1,0 +1,259 @@
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300);
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.anim-slider {
+    background: none repeat scroll 0 0 #fff;
+    height: 400px;
+    left: 0;
+    list-style-type: none;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    text-align: center;
+    top: 0;
+    width: 100%;
+}
+
+.anim-dots span {
+    border-radius: 100%;
+    background: none repeat scroll 0 0 #99a3ad;
+    cursor: pointer;
+    display: inline-block;
+    height: 14px;
+    margin: 3px;
+    position: relative;
+    width: 14px;
+}
+
+.anim-dots span.anim-dots-this:after {
+    background: none repeat scroll 0 0 #ffffff;
+    border-radius: 100%;
+    content: "";
+    height: 14px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 14px;
+}
+
+.anim-slide .icon_slider {
+    color: #888888;
+    font-weight: 300;
+    font-size: 3em;
+}
+
+.anim-slide .title_iteam_slider {
+    color: #ffffff;
+    font-size: 56px;
+    text-transform: uppercase;
+    font-family: UTM_AvoBold;
+}
+
+.anim-slide h3 {
+    color: #c0c0c0;
+    font-size: 30px;
+}
+
+.anim-slide h4 {
+    color: #c0c0c0;
+    font-size: 25px;
+}
+
+.anim-slide .icon_iteam_slider {
+    text-shadow: -1px 1px 0px;
+    padding: 0px;
+    width: 100%;
+    text-align: center;
+    top: 25%;
+}
+.anim-slide .icon_iteam_slider img{
+    max-width: 100%;
+}
+.anim-slide .icon_iteam_slider *{
+    position: relative;
+}
+
+.anim-slide .title_iteam_slider {
+    width: 100%;
+    top: 35%;
+}
+.anim-slide .title_iteam_slider *{
+    position: relative;
+}
+
+.anim-slide .des_iteam_slider {
+    width: 100%;
+    top: 55%;
+    color: #ffffff;
+    font-size: 14px;
+}
+.anim-slide .des_iteam_slider *{
+    position: relative;
+}
+
+.anim-slide .view_iteam_slider {
+    width: 100%;
+    top: 65%;
+}
+.anim-slide .view_iteam_slider *{
+    position: relative;
+}
+.view_iteam_slider>a{
+    display: inline-block;
+    width: 130px;
+    height: 40px;
+    max-width: 100%;
+    background: #737b35;
+    color: #ffffff;
+    line-height: 40px;
+    text-align: center;
+    font-family: UTM_AvoBold;
+    text-transform: uppercase;
+    border-radius: 4px;
+    font-size: 14px;
+    -moz-transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+}
+.view_iteam_slider>a:hover{
+    background: #8b9444;
+    color: #ffffff;
+    -moz-transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.anim-slide h4#version1 {
+    width: 100%;
+    top: 60%;
+}
+
+.anim-slide h3#todo {
+    top: 0%;
+    left: 20%;
+}
+
+.anim-slide h3#lightspeed {
+    top: 15%;
+    left: 45%;
+}
+
+.anim-slide h4#zoomup {
+    top: 15%;
+    left: 60%;
+}
+
+.anim-slide h4#bounceRight {
+    top: 15%;
+    left: 75%;
+}
+
+.anim-slide h3#rollin {
+    top: 31%;
+    left: 20%;
+}
+
+.anim-slide h4#fadeDown {
+    top: 43%;
+    left: 28%;
+}
+
+.anim-slide h4#fadeUp {
+    top: 31%;
+    left: 28%;
+}
+
+.anim-slide h3#rotate {
+    top: 50%;
+    left: 49%;
+}
+
+.anim-slide h4#rotateRight {
+    top: 50%;
+    left: 61%;
+}
+
+.anim-slide h4#rotateLeft {
+    top: 50%;
+    left: 80%;
+}
+
+.anim-slide img#css3 {
+    left: 35%;
+    top: 4%;
+}
+
+.anim-slide img#html5 {
+    left: 52%;
+    top: -1%;
+}
+
+.anim-slide img#jquery {
+    top: 60%;
+    left: 41%;
+}
+
+.anim-slide img#modernizr {
+    width: 260px;
+    top: 75%;
+    left: 20%;
+}
+
+.anim-slide h2#animatecss {
+    top: 69%;
+    left: 60%;
+    color: #f35626;
+}
+
+div#demo {
+    text-align: center;
+}
+
+div#demo>a {
+    display: inline-block;
+    text-decoration: none;
+}
+
+div#demo>a>h4 {
+    padding: 5px 8px;
+    margin: 20px;
+    background-color: #225A86;
+    color: #fff;
+    box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.15);
+}
+
+p#credits {
+    z-index: -1;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+}
+
+p#credits>a {
+    font-weight: bold;
+    color: #999;
+    text-decoration: none;
+}
+
+img#github-logo {
+    z-index: -1;
+    position: fixed;
+    bottom: -20px;
+    right: 2%;
+    opacity: 0.4;
+}
+.anim-slider:hover>nav.anim-arrows>span:hover{
+    -webkit-box-shadow: 0 0 0 3px rgb(115, 123, 53);
+    -moz-box-shadow: 0 0 0 3px rgb(115, 123, 53);
+    box-shadow: 0 0 0 3px rgb(115, 123, 53);
+}
+nav.anim-arrows>span.anim-arrows-next:hover:after,
+nav.anim-arrows>span.anim-arrows-prev:hover:after{
+    color:rgb(115, 123, 53);
+}

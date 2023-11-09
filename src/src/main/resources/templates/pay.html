@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head th:replace="fragment:: head">
+</head>
+<body>
+
+<header th:replace="fragment:: header"></header>
+<!-- end header-->
+
+<div class="clearix"></div>
+
+<article id="body_home">
+
+    <section class="sc_page_header clearfix">
+        <div class="container">
+            <div class="row_pc">
+
+                <div class="clearfix clearfix-100"></div>
+                <div class="icon_page fadeInDown wow"><img src="img/icon_page.png" alt=""/></div>
+                <div class="clearfix clearfix-10"></div>
+                <h2 class="name_page fadeInRightBig wow"><span>Giỏ Hàng</span></h2>
+                <div class="clearfix clearfix-15"></div>
+                <ul class="back_link fadeInUp wow">
+                    <li><a href="">Trang chủ</a></li>
+                    <li><a href="">Sản phẩm</a></li>
+                    <li><a href="">Giỏ Hàng</a></li>
+                </ul>
+                <div class="clearfix clearfix-70"></div>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="clearfix clearfix-70"></div>
+
+    <section class="sc_contact_page clearfix">
+        <div class="container">
+            <div class="row_pc">
+
+                <div class="table-responsive">
+                    <div class="tab_rs_cart clearfix">
+                        <ul class="list_b_cart clearfix">
+                            <li><img class="icon_cart_b" src="img/icon_cart_b1.png" alt=""/>Giỏ Hàng</li>
+                            <li class="active"><img class="icon_cart_b" src="img/icon_cart_b2.png" alt=""/>Thanh toán</li>
+                            <li><img class="icon_cart_b" src="img/icon_cart_b3.png" alt=""/>Thành công</li>
+                        </ul>
+
+                        <div class="clearfix clearfix-50"></div>
+                    </div>
+                </div>
+
+                <div class="clearfix clearfix-20"></div>
+
+                <div class="row">
+                    <div class="col-md-9 col-sm-12 col-xs-12">
+                        <form class="form_input_oder">
+                            <div class="hd_form_ipo">Địa chỉ nhận hàng</div>
+                            <div class="clearfix"></div>
+                            <div class="table-responsive">
+                                <div class="list_group_ipo clearfix">
+
+                                    <div class="clearfix"></div>
+                                    <div class="group_input_oder">
+                                        <div class="input-group">
+                                            <div class="input-group-btn">
+                                                <div class="btn btn-default left_g_iod">Họ tên *</div>
+                                            </div>
+                                            <input class="name form-control" aria-label="">
+                                        </div>
+                                    </div>
+
+                                    <div class="clearfix"></div>
+                                    <div class="group_input_oder">
+                                        <div class="input-group">
+                                            <div class="input-group-btn">
+                                                <div class="btn btn-default left_g_iod">Địa chỉ *</div>
+                                            </div>
+                                            <input class="address form-control" aria-label="">
+                                        </div>
+                                    </div>
+
+                                    <div class="clearfix"></div>
+                                    <div class="group_input_oder">
+                                        <div class="input-group">
+                                            <div class="input-group-btn">
+                                                <div class="btn btn-default left_g_iod">Email *</div>
+                                            </div>
+                                            <input class="email form-control" aria-label="">
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <div class="group_input_oder">
+                                        <div class="input-group">
+                                            <div class="input-group-btn">
+                                                <div class="btn btn-default left_g_iod">Số điện thoại *</div>
+                                            </div>
+                                            <input class="phone-number form-control" aria-label="">
+                                        </div>
+                                    </div>
+
+                                    <div class="clearfix clearfix-10"></div>
+
+                                    <label class="checkbox-inline check_acc_iod"><input type="checkbox" value="">Gửi đến một địa chỉ khác?</label>
+                                    <div class="clearfix clearfix-20"></div>
+                                    <div class="txt_note_oder">Ghi chú </div>
+                                    <div class="clearfix clearfix-10"></div>
+                                    <input class="form-control input_note_oder" aria-label="">
+                                    <div class="clearfix clearfix-40"></div>
+
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-md-3 col-sm-12 col-xs-12">
+                        <div class="box_input_km_cart">
+                            <div class="box_right_cart clearfix">
+                                <div class="hd_right_cart">GIỎ HÀNG</div>
+                                <div class="clearfix"></div>
+                                <div class="content_box_right_cart">
+                                    <div class="name_prod_r_c">Bánh</div>
+                                    <div class="sl_prod_r_c">Tổng</div>
+                                    <div class="clearfix clearfix-10"></div>
+                                    <ul th:each="p : ${listProductOrder}" class="list_price_right_cart">
+                                        <li>
+                                            <a href="" class="left_prod_r_c" th:text = "${p.product.getProductName()} + '  '+ x + ${p.getQuantity()}"></a>
+                                            <div class="nb_price_prod_r_c" th:text="${p.product.getPrice()}+ đ"></div>
+                                        </li>
+
+                                        <li>
+                                            <span class="left_prod_r_c">Tổng tiền cần trả</span>
+                                            <div class="money-pay nb_price_prod_r_c" style="color: #111111" th:text = "${totalPrice} + đ"></div>
+                                        </li>
+                                    </ul>
+                                    <div class="clearfix clearfix-10"></div>
+
+
+                                    <div class="clearfix clearfix-10"></div>
+                                    <label class="checkbox-inline check_acc_iod"><input type="checkbox" value="" checked>Thanh toán tiền mặt</label>
+
+                                    <div class="clearfix clearfix-30"></div>
+                                    <button onclick="pay()" class="butt_right_od">ĐẶT HÀNG</button>
+                                    <div class="clearfix clearfix-30"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix clearfix-30"></div>
+                        <div class="box_input_km_cart">
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+    <div class="clearfix clearfix-50"></div>
+
+
+</article>
+
+<div class="clearfix"></div>
+
+<footer th:replace="fragment :: footer"></footer>
+
+</body>
+<script src = "/assets/js/Adela/pay.js"></script>
+</html>
+
+

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="fragment:: head" lang="en">
+</head>
+<body>
+
+<header th:replace="fragment:: header"></header>
+<!-- end header-->
+
+<div class="clearix"></div>
+
+<article id="body_home">
+
+    <section class="sc_page_header clearfix">
+        <div class="container">
+            <div class="row_pc">
+
+                <div class="clearfix clearfix-100"></div>
+                <div class="icon_page fadeInDown wow"><img src="/assets/img/icon_page.png" alt=""/></div>
+                <div class="clearfix clearfix-10"></div>
+                <h2 class="name_page fadeInRightBig wow"><span>Đăng kí</span></h2>
+                <div class="clearfix clearfix-15"></div>
+                <ul class="back_link fadeInUp wow">
+                    <li><a href="">Trang chủ</a></li>
+                    <li><a href="">Đăng kí</a></li>
+                </ul>
+                <div class="clearfix clearfix-70"></div>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="clearfix clearfix-70"></div>
+
+    <section class="sc_contact_page clearfix">
+        <div class="container">
+            <div class="row_pc">
+
+                <form class="form_login_acc">
+                    <input type="hidden" class="csrf" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+                    <div class="tit_login_acc">Đăng kí</div>
+                    <div class="clearfix clearfix-30"></div>
+                    <div class="group_login_input">
+                        <div class="name_input_login">Username</div>
+                        <div class="clearfix"></div>
+                        <input  name="username" class="username input_login" aria-label="">
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="group_login_input">
+                        <div class="name_input_login">Mật khẩu *</div>
+                        <div class="clearfix"></div>
+                        <input type="password" name="password" class="password input_login" aria-label="">
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="group_login_input">
+                        <div class="name_input_login">Xác nhận mật khẩu *</div>
+                        <div class="clearfix"></div>
+                        <input type="password" class="re-password input_login" aria-label="">
+                    </div>
+                    <div class="clearfix clearfix-20"></div>
+                    <button type="button" class="btn-logout butt_sign_in">Đăng kí</button>
+                    <div class="clearfix clearfix-20"></div>
+                    <div th:if="${error}">
+                        <div class="alert alert-danger" th:text="${error}"></div>
+                    </div>
+                    <div class="message-error alert alert-danger d-none"></div>
+                    <a href="/auth/login" class="or_new_pass">Đăng nhập</a>
+                </form>
+
+                <div class="clearfix clearfix-20"></div>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="clearfix clearfix-50"></div>
+
+
+</article>
+
+<div class="clearfix"></div>
+
+<footer th:replace="fragment :: footer"></footer>
+<script src="/assets/js/Adela/register.js"></script>
+</body>
+</html>
+
+

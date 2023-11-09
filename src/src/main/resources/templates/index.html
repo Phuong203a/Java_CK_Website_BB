@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragment:: head">
+</head>
+<body>
+
+<header th:replace="fragment:: header"></header>
+<!-- end header-->
+
+<div class="clearix"></div>
+
+<article id="body_home">
+
+    <section class="sc_slider_main clearfix fadeInDown wow">
+        <ul class="anim-slider">
+
+            <!-- Slide No1 -->
+            <li class="anim-slide iteam_slider_main" style="background: url(/assets/img/banner.png) center center">
+                <div class="icon_iteam_slider"><img src="/assets/img/icon_slider.png" alt=""/></div>
+                <div class="title_iteam_slider"><span>KHAI TRƯƠNG</span></div>
+                <div class="des_iteam_slider"><span>Ưu đãi ngập tràn chỉ trong 3 ngày</span></div>
+                <div class="view_iteam_slider"><a href="">XEM NGAY</a></div>
+            </li>
+            <li class="anim-slide iteam_slider_main" style="background: url(/assets/img/banner.png) center center">
+                <div class="icon_iteam_slider"><img src="/assets/img/icon_slider.png" alt=""/></div>
+                <div class="title_iteam_slider"><span>KHAI TRƯƠNG</span></div>
+                <div class="des_iteam_slider"><span>Ưu đãi ngập tràn chỉ trong 3 ngày</span></div>
+                <div class="view_iteam_slider"><a href="">XEM NGAY</a></div>
+            </li>
+            <li class="anim-slide iteam_slider_main" style="background: url(/assets/img/banner.png) center center">
+                <div class="icon_iteam_slider"><img src="/assets/img/icon_slider.png" alt=""/></div>
+                <div class="title_iteam_slider"><span>KHAI TRƯƠNG</span></div>
+                <div class="des_iteam_slider"><span>Ưu đãi ngập tràn chỉ trong 3 ngày</span></div>
+                <div class="view_iteam_slider"><a href="">XEM NGAY</a></div>
+            </li>
+
+            <!-- Arrows -->
+            <nav class="anim-arrows">
+                <span class="anim-arrows-prev"></span>
+                <span class="anim-arrows-next"></span>
+            </nav>
+            <!-- Dynamically created dots -->
+
+        </ul>
+
+        <!-- Bower Depedencies -->
+        <script type="text/javascript" src="/assets/js/modernizr.js"></script>
+        <!-- Load the plugin -->
+        <script type="text/javascript" src="/assets/js/jquery.animateSlider.js"></script>
+        <script>
+            $(".anim-slider").animateSlider(
+                {
+                    autoplay	:true,
+                    interval	:7000,
+                    animations 	:
+                        {
+                            0	: 	//Slide No1
+                                {
+                                    ".icon_iteam_slider"	:
+                                        {
+                                            show   	  : "bounceIn",
+                                            hide 	  : "zoomOutUpBig",
+                                            delayShow : "delay1s"
+                                        },
+                                    ".title_iteam_slider"   :
+                                        {
+                                            show 	  : "fadeInUpLeftLarge",
+                                            hide 	  : "fadeOutDownBig",
+                                            delayShow : "delay1-5s"
+                                        },
+                                    ".des_iteam_slider" 	:
+                                        {
+                                            show   	  : "zoomInUpRightLarge",
+                                            hide 	  : "fadeOutRightBig",
+                                            delayShow : "delay1-5s"
+                                        },
+                                    ".view_iteam_slider"    :
+                                        {
+                                            show 	  : "bounceInUp",
+                                            hide 	  : "fadeOutLeftBig",
+                                            delayShow : "delay2s"
+                                        }
+                                },
+                            1	: 	//Slide No1
+                                {
+                                    ".icon_iteam_slider"	:
+                                        {
+                                            show   	  : "bounceIn",
+                                            hide 	  : "zoomOutUpBig",
+                                            delayShow : "delay1s"
+                                        },
+                                    ".title_iteam_slider"   :
+                                        {
+                                            show 	  : "fadeInUpLeftLarge",
+                                            hide 	  : "fadeOutDownBig",
+                                            delayShow : "delay1-5s"
+                                        },
+                                    ".des_iteam_slider" 	:
+                                        {
+                                            show   	  : "zoomInUpRightLarge",
+                                            hide 	  : "fadeOutRightBig",
+                                            delayShow : "delay1-5s"
+                                        },
+                                    ".view_iteam_slider"    :
+                                        {
+                                            show 	  : "bounceInUp",
+                                            hide 	  : "fadeOutLeftBig",
+                                            delayShow : "delay2s"
+                                        }
+                                },
+                            2	: 	//Slide No1
+                                {
+                                    ".icon_iteam_slider"	:
+                                        {
+                                            show   	  : "bounceIn",
+                                            hide 	  : "zoomOutUpBig",
+                                            delayShow : "delay1s"
+                                        },
+                                    ".title_iteam_slider"   :
+                                        {
+                                            show 	  : "fadeInUpLeftLarge",
+                                            hide 	  : "fadeOutDownBig",
+                                            delayShow : "delay1-5s"
+                                        },
+                                    ".des_iteam_slider" 	:
+                                        {
+                                            show   	  : "zoomInUpRightLarge",
+                                            hide 	  : "fadeOutRightBig",
+                                            delayShow : "delay1-5s"
+                                        },
+                                    ".view_iteam_slider"    :
+                                        {
+                                            show 	  : "bounceInUp",
+                                            hide 	  : "fadeOutLeftBig",
+                                            delayShow : "delay2s"
+                                        }
+                                }
+                        }
+                });
+        </script>
+    </section>
+
+    <div class="clearfix"></div>
+
+    <section class="sc_about_adela clearfix">
+        <div class="container">
+            <div class="row_pc">
+                <div class="clearfix clearfix-70"></div>
+                <h2 class="tit_about_adela fadeInDown wow"><span>Hãy Đến Với ADELA</span></h2>
+                <div class="clearfix clearfix-50"></div>
+
+                <div class="list_about_adela clearfix">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 col-xs-6 col-480-12">
+                            <div class="box_about_adela clearfix">
+                                <img class="icon_about fadeInDown wow" src="assets/img/icon_about1.png" alt=""/>
+                                <div class="clearfix"></div>
+                                <div class="sub_about">
+                                    <h3 class="name_about fadeInLeft wow"><span>100% Thiên nhiên</span></h3>
+                                    <div class="clearfix"></div>
+                                    <div class="des_about fadeInRight wow">Chúng tôi muốn cung cấp cho bạn những nguyên liệu nhiều dinh dưỡng nhất.</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-6 col-480-12">
+                            <div class="box_about_adela clearfix">
+                                <img class="icon_about fadeInDown wow" src="/assets/img/icon_about2.png" alt=""/>
+                                <div class="clearfix"></div>
+                                <div class="sub_about">
+                                    <h3 class="name_about fadeInLeft wow"><span>Bánh mỳ thơm ngon</span></h3>
+                                    <div class="clearfix"></div>
+                                    <div class="des_about fadeInRight wow">ADELA có gần 150 loại bánh mỳ được làm theo công thức tiêu chuẩn thế giới.</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-6 col-480-12">
+                            <div class="box_about_adela clearfix">
+                                <img class="icon_about fadeInDown wow" src="/assets/img/icon_about3.png" alt=""/>
+                                <div class="clearfix"></div>
+                                <div class="sub_about">
+                                    <h3 class="name_about fadeInLeft wow"><span>0% Chất bảo quản</span></h3>
+                                    <div class="clearfix"></div>
+                                    <div class="des_about fadeInRight wow">Bảo đảm an toàn cho sức khỏe của bạn khi sử dựng sản phẩm ADELA</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-6 col-480-12">
+                            <div class="box_about_adela clearfix">
+                                <img class="icon_about fadeInDown wow" src="/assets/img/icon_about4.png" alt=""/>
+                                <div class="clearfix"></div>
+                                <div class="sub_about">
+                                    <h3 class="name_about fadeInLeft wow"><span>Bánh ngọt hấp dẫn</span></h3>
+                                    <div class="clearfix"></div>
+                                    <div class="des_about fadeInRight wow">Hơn 100 loại bán ngọt đầy màu sắc sẽ chinh phục mọi thực khách.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="clearfix clearfix-100"></div>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="clearfix"></div>
+
+    <section class="sc_slogan_home clearfix">
+        <h2 class="txt_slogan_home pulse wow">Chúng tôi tạo ra hàng trăm loại bánh hấp dẫn.</h2>
+        <div class="clearfix clearfix-40"></div>
+        <a href="" class="view_slogan_home bounce wow">XEM NGAY</a>
+    </section>
+
+    <div class="clearfix"></div>
+
+    <section class="sc_prod_hot clearfix">
+        <div class="container">
+            <div class="row_pc">
+
+                <div class="clearfix clearfix-70"></div>
+                <h2 class="tit_prod_hot fadeInDown wow">SẢN PHẨM NỔI BẬT</h2>
+                <div class="clearfix clearfix-25"></div>
+                <div class="list_prod">
+                    <div class="row_13">
+
+                    </div>
+                </div>
+
+                <div class="clearfix"></div>
+                <div class="text-center"><a href="http://localhost:8080/product/category/B%C3%A1nh%20kem" class="view_slogan_home bounce wow">XEM Thêm</a></div>
+                <div class="clearfix clearfix-40"></div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <div class="clearfix clearfix-40"></div>
+
+</article>
+
+<div class="clearfix"></div>
+
+<footer th:replace="fragment :: footer"></footer>
+
+</body>
+<script src="/assets/js/Adela/index.js"></script>
+</html>
+
+
