@@ -9,6 +9,7 @@ import com.kayty.src.Model.ShoppingCart;
 import com.kayty.src.Model.ShoppingCartProduct;
 import com.kayty.src.Model.User;
 import com.kayty.src.Repository.RoleRepository;
+import com.kayty.src.Repository.ShoppingCartRepository;
 import jakarta.servlet.http.HttpServletRequest;
 
 import jakarta.servlet.http.HttpSession;
@@ -44,6 +45,9 @@ public class AuthController {
     private  RoleRepository repository;
 
     @Autowired
+    private ShoppingCartRepository shoppingCartRepository;
+
+    @Autowired
     private ShoppingCartProductDAO shoppingCartProductDAO;
 
     @Autowired
@@ -71,7 +75,9 @@ public class AuthController {
             String encodedPassword = passwordEncoder.encode(user.getPassword());
             Role role =  repository.getById(2L);
             User newUser  = (User) userDAO.add(new User(user.getUsername(), encodedPassword,role));
-
+            ShoppingCart s = new ShoppingCart();
+            s.setUser(newUser);
+            shoppingCartRepository.save(s);
             return "redirect:/auth/login";
         }
         model.addAttribute("error", "User already exists");
