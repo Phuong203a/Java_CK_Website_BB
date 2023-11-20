@@ -42,6 +42,14 @@ public class ProductAPIController {
     @Autowired
     private HttpServletRequest request;
 
+    @GetMapping("/getProducts")
+    public Response<List<Product>> getAll()
+    {
+        List<Product> products = productRepository.findAll();
+        Map<String, List<Product>> data = new HashMap<>();
+        data.put("list", products);
+        return new Response<>(200, "Successful", products.size(), data);
+    }
 
     @GetMapping("/get-bestsale-product")
     public Response<List<Product>> getBestSaleProduct() {
