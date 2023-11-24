@@ -8,8 +8,10 @@ import jakarta.persistence.NoResultException;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.Query;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.util.List;
+import java.util.Optional;
 
 @org.springframework.stereotype.Repository
 public class UserDAO implements Repository {
@@ -17,7 +19,8 @@ public class UserDAO implements Repository {
     private EntityManager entityManager;
     @Autowired
     private  UserRepository userRepository;
-
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     private final String GET_USER_BY_NAME = "SELECT u FROM User u WHERE u.username = :username";
 
@@ -66,5 +69,26 @@ public class UserDAO implements Repository {
     @Override
     public boolean update(Object item) {
         return false;
+    }
+
+    public Iterable<User> getAllUser(){
+        return userRepository.findAll();
+    }
+
+
+    public Optional<User> findByEmail(String email) {
+        return userRepository.findByEmail(email);
+    }
+
+
+
+    public void resetUserPassword(User user, String newPassword) {
+        user.setPassword(passwordEncoder.encode(newPassword));
+        userRepository.save(user);
+    }
+
+
+    public Optional<User> findById(Long idUser) {
+        return userRepository.findById(idUser);
     }
 }
