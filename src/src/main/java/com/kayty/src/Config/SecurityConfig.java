@@ -68,7 +68,8 @@ public class SecurityConfig implements WebMvcConfigurer {
                                 .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
                                 .logoutSuccessUrl("/auth/login")
                                 .permitAll()
-                );
+                )
+                .csrf(csrf -> csrf.disable());
 
         return http.build();
     }

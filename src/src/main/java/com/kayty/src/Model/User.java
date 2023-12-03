@@ -27,6 +27,9 @@ public class User {
     @Column
     private String email;
 
+    @Column
+    private Boolean status;
+
     @Column(nullable = true, unique = true)
     @CreationTimestamp
     private LocalDateTime createdDate;
