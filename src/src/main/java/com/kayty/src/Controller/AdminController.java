@@ -1,6 +1,9 @@
 package com.kayty.src.Controller;
 
+import com.kayty.src.DAO.OrderDAO;
 import com.kayty.src.DAO.ProductDAO;
+import com.kayty.src.Helps.Response;
+import com.kayty.src.Model.Order;
 import com.kayty.src.Model.Product;
 import com.kayty.src.Model.User;
 import com.kayty.src.Repository.ProductRepository;
@@ -15,6 +18,9 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.view.RedirectView;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @Controller
@@ -27,6 +33,8 @@ public class AdminController {
     ProductRepository productRepository;
     @Autowired
     UserRepository userRepository;
+    @Autowired
+    OrderDAO orderDAO;
     @GetMapping(value = {"", "/"})
 
     public String renderAdmin(Model model) {
@@ -67,18 +75,14 @@ public class AdminController {
 
 
     //sua san pham
-    @GetMapping(value = "/edit-product/{id}")
-    public String editProduct(Model model, @PathVariable(value = "id") Long id){
-        Optional<Product> product = productRepository.findById(id);
-        System.out.println(product.toString());
-        model.addAttribute("products", product);
-        return "edit";
-    }
-
-//    @GetMapping("/edit-product/{id}")
-//    public ResponseEntity<Product>(@PathVariable(value = "id") Long id){
-//
+//    @GetMapping(value = "/edit-product/{id}")
+//    public String editProduct(Model model, @PathVariable(value = "id") Long id){
+//        Optional<Product> product = productRepository.findById(id);
+//        System.out.println(product.toString());
+//        model.addAttribute("products", product);
+//        return "edit";
 //    }
+
 
     @PutMapping(value = "/edit-product/{id}")
     public ResponseEntity<Product> updateProduct(@RequestBody Product updatedProduct, @PathVariable(value = "id") Long id) {
@@ -124,8 +128,14 @@ public class AdminController {
         //trả về lỗi
         return ResponseEntity.notFound().build();
     }
-
-
-
+//    //danh sach order va thong ke
+//    @GetMapping("/order/get-full-order")
+//    public Response<List<Order>> getShowAllOrder(){
+//        List<Order> listOrder = orderDAO.getAllOrders();
+//        Map<String, List<Order>> data = new HashMap<>();
+//        data.put("list", listOrder);
+////        int quantity = orderDAO.countOrders();
+//        return new Response<>(200, "Successful", ((List<Order>) listOrder).size(), data);
+//    }
 
 }
