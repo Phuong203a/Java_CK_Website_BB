@@ -24,7 +24,7 @@ public class UserAPIController {
     private UserDAO userDAO;
 
     //lay thong tin tat ca status nguoi dung
-    @GetMapping("/")
+    @GetMapping("")
     public Response<List<User>> getAllUser(){
         Iterable<User> liUser = userDAO.getAllUser();
         Map<String, List<User>> data = new HashMap<>();
