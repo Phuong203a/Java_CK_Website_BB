@@ -8,6 +8,7 @@ import com.kayty.src.Model.Product;
 import com.kayty.src.Model.ShoppingCart;
 import com.kayty.src.Model.ShoppingCartProduct;
 import com.kayty.src.Model.User;
+import com.kayty.src.Repository.ProductRepository;
 import jakarta.servlet.http.HttpServletRequest;
 import com.kayty.src.Repository.ShoppingCartProductRepository;
 import com.kayty.src.Repository.ShoppingCartRepository;
@@ -41,7 +42,8 @@ public class ProductAPIController {
 
     @Autowired
     private HttpServletRequest request;
-
+    @Autowired
+    private ProductRepository productRepository;
     @GetMapping("/getProducts")
     public Response<List<Product>> getAll()
     {

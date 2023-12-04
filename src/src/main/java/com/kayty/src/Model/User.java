@@ -1,5 +1,8 @@
 package com.kayty.src.Model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -14,6 +17,7 @@ import java.util.*;
 @Entity
 @NoArgsConstructor
 @Table
+@JsonIgnoreProperties({"orders", "shoppingCarts"})
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,12 +28,18 @@ public class User {
     @Column
     private String password;
 
+    @Column
+    private String email;
+
+    @Column
+    private Boolean status;
 
     @Column(nullable = true, unique = true)
     @CreationTimestamp
     private LocalDateTime createdDate;
 
     @OneToMany(mappedBy = "user")
+    @JsonManagedReference
     private List<Order> orders;
 
     @OneToOne(mappedBy = "user")

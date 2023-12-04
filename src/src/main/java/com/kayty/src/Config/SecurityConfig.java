@@ -46,7 +46,7 @@ public class SecurityConfig implements WebMvcConfigurer {
         http
                 .authorizeRequests((requests) -> requests
                         .requestMatchers("/", "/info", "/contact", "/searchs", "/home", "/assets/**",
-                                "/auth/register", "/auth/authorization", "/api/product/**", "/product/**", "/images/**").permitAll()
+                                "/auth/register","/auth/forgot-password","/auth/reset-password", "/auth/confirm-code", "/auth/authorization", "/api/product/**", "/product/**", "/images/**").permitAll()
                         .requestMatchers("/admin/**").hasRole("ADMIN")
                         .requestMatchers("/orders/**", "/shopping-cart").hasRole("USER")
                         .anyRequest().authenticated() // Require authentication for any other request
@@ -68,7 +68,8 @@ public class SecurityConfig implements WebMvcConfigurer {
                                 .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
                                 .logoutSuccessUrl("/auth/login")
                                 .permitAll()
-                );
+                )
+                .csrf(csrf -> csrf.disable());
 
         return http.build();
     }
