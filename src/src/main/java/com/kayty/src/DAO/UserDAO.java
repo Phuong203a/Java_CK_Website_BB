@@ -65,12 +65,13 @@ public class UserDAO implements Repository {
 
     @Override
     public boolean update(Object item) {
+        if (item != null) {
+            userRepository.save((User) item);
+            return true;
+        }
         return false;
     }
 
-//    public Iterable<User> getAllUser(){
-//        return userRepository.findAll();
-//    }
 public Iterable<User> getAllUser() {
     return userRepository.findAll();
 }
