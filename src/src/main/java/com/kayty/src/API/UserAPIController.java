@@ -6,11 +6,13 @@ import com.kayty.src.Model.Product;
 import com.kayty.src.Model.User;
 import com.kayty.src.Repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/user")
@@ -56,13 +58,22 @@ public class UserAPIController {
         }
     }
 
-//    @PostMapping("/update-status/{id}")
-//    public Response<User> updateStatus(@PathVariable Long id, ){
-//        User user = userRepository.getById(id);
-//        boolean status = req.;
-//
-//
-//        return new Response<>(200, "update successful");
-//    }
+    //active or inactive user
+    @PostMapping("/edit-status-user/{id}")
+    public ResponseEntity<User> getUser(@PathVariable Long id) throws Exception {
+        Optional<User> optionalUser = userRepository.findById(id);
+        if(optionalUser.isPresent()){
+            User user = optionalUser.get();
+            boolean currentStatus = user.getStatus();
+            //đổi ngược trạng thái và cập nhật ok
+            user.setStatus(!currentStatus);
+            userRepository.save(user);
+            return ResponseEntity.ok().build();
+        }
+        //trả về lỗi
+        return ResponseEntity.notFound().build();
+    }
+
+
 
 }

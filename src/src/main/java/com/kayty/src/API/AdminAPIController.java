@@ -20,7 +20,7 @@ import java.util.Map;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/admin/api")
+@RequestMapping("/api/admin")
 public class AdminAPIController {
     @Autowired
     private OrderDAO orderDAO;
@@ -50,14 +50,6 @@ public class AdminAPIController {
     }
 
 
-    //lay thong tin tat ca status nguoi dung
-    @GetMapping("/users")
-    public Response<List<User>> getAllUser(){
-        Iterable<User> liUser = userDAO.getAllUser();
-        Map<String, List<User>> data = new HashMap<>();
-        data.put("list", (List<User>) liUser);
-        return new Response<>(200, "Successful", ((List<User>) liUser).size(), data);
-    }
     //them san pham
     @PostMapping("/add-product")
     public ResponseEntity<Product> addProduct(@RequestBody Product product){//@RequestParam("product_images") MultipartFile productImage
@@ -77,7 +69,6 @@ public class AdminAPIController {
         if (existingProductOptional.isPresent()) {
             updatedProduct.setId(id);
             // Lưu sản phẩm đã cập nhật vào cơ sở dữ liệu
-            System.out.println(updatedProduct.toString());
             Product savedProduct = productRepository.save(updatedProduct);
             // Trả về đã cập nhật và trạng thái OK
             return new ResponseEntity<>(savedProduct, HttpStatus.OK);
@@ -98,19 +89,5 @@ public class AdminAPIController {
         }
         return ResponseEntity.notFound().build();
     }
-    //active or inactive user
-    @PostMapping("/edit-status-user/{id}")
-    public ResponseEntity<User> getUser(@PathVariable Long id) throws Exception {
-        Optional<User> optionalUser = userRepository.findById(id);
-        if(optionalUser.isPresent()){
-            User user = optionalUser.get();
-            boolean currentStatus = user.getStatus();
-            //đổi ngược trạng thái và cập nhật ok
-            user.setStatus(!currentStatus);
-            userRepository.save(user);
-            return ResponseEntity.ok().build();
-        }
-        //trả về lỗi
-        return ResponseEntity.notFound().build();
-    }
+
 }
