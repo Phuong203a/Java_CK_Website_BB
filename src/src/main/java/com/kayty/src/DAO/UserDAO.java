@@ -3,10 +3,7 @@ package com.kayty.src.DAO;
 import com.kayty.src.Model.User;
 import com.kayty.src.Repository.Repository;
 import com.kayty.src.Repository.UserRepository;
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.NoResultException;
-import jakarta.persistence.PersistenceContext;
-import jakarta.persistence.Query;
+import jakarta.persistence.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
@@ -71,10 +68,12 @@ public class UserDAO implements Repository {
         return false;
     }
 
-    public Iterable<User> getAllUser(){
-        return userRepository.findAll();
-    }
-
+//    public Iterable<User> getAllUser(){
+//        return userRepository.findAll();
+//    }
+public Iterable<User> getAllUser() {
+    return userRepository.findAll();
+}
 
     public Optional<User> findByEmail(String email) {
         return userRepository.findByEmail(email);
@@ -91,4 +90,6 @@ public class UserDAO implements Repository {
     public Optional<User> findById(Long idUser) {
         return userRepository.findById(idUser);
     }
+    // Lấy danh sách tất cả các user từ cơ sở dữ liệu
+
 }

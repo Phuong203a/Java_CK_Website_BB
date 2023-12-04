@@ -1,5 +1,8 @@
 package com.kayty.src.Model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -14,6 +17,7 @@ import java.util.*;
 @Entity
 @NoArgsConstructor
 @Table
+@JsonIgnoreProperties({"orders", "shoppingCarts"})
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -35,6 +39,7 @@ public class User {
     private LocalDateTime createdDate;
 
     @OneToMany(mappedBy = "user")
+    @JsonManagedReference
     private List<Order> orders;
 
     @OneToOne(mappedBy = "user")

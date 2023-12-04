@@ -12,10 +12,10 @@ public class OrderDAO {
     private EntityManager entityManager;
 
     // Hàm để đếm số lượng đơn hàng
-    public int countOrders() {
-        Query query = entityManager.createQuery("SELECT COUNT(o) FROM Order o");
-        return (int) query.getSingleResult();
-    }
+//    public int countOrders() {
+//        Query query = entityManager.createQuery("SELECT COUNT(o) FROM Order o");
+//        return (int) query.getSingleResult();
+//    }
 
     // Hàm để lấy tất cả đơn hàng
     public List<Order> getAllOrders() {
