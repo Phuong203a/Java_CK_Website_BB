@@ -3,6 +3,7 @@ package com.kayty.src.Controller;
 import com.kayty.src.DAO.ShoppingCartDAO;
 import com.kayty.src.DAO.ShoppingCartProductDAO;
 import com.kayty.src.DAO.UserDAO;
+import com.kayty.src.Helps.EmailService;
 import com.kayty.src.Helps.Utils;
 import com.kayty.src.Model.Role;
 import com.kayty.src.Model.ShoppingCart;
@@ -25,7 +26,8 @@ import org.springframework.web.bind.annotation.*;
 
 
 import java.util.Collection;
-
+import java.util.Optional;
+import java.util.Random;
 
 
 @Controller
@@ -52,7 +54,10 @@ public class AuthController {
 
     @Autowired
     private ShoppingCartDAO shoppingCartDAO = new ShoppingCartDAO();
-
+    @Autowired
+    private EmailService emailService;
+    //dung de doi mat khau
+    String code;
     //render giao diện login
     @GetMapping("/login")
     public String renderLogin(Model model) {
@@ -74,7 +79,7 @@ public class AuthController {
         if(userExist == null) {
             String encodedPassword = passwordEncoder.encode(user.getPassword());
             Role role =  repository.getById(2L);
-            User newUser  = (User) userDAO.add(new User(user.getUsername(), encodedPassword,role));
+            User newUser  = (User) userDAO.add(new User(user.getUsername(), encodedPassword, user.getEmail(), role, true));
             ShoppingCart s = new ShoppingCart();
             s.setUser(newUser);
             shoppingCartRepository.save(s);
@@ -115,6 +120,79 @@ public class AuthController {
     @GetMapping("/error")
     public String handleError() {
         return "redirect:/home";
+    }
+
+    //render giao diện quên mật khẩu
+    @GetMapping("/forgot-password")
+    public String renderForgotPassword() {
+        return "forgot_password";
+    }
+
+    //xử lý quên mật khẩu
+    @PostMapping("/forgot-password")
+    public String sendEmailRequest(@ModelAttribute User user, Model model){
+        Optional<User> userExist = userDAO.findByEmail(user.getEmail());
+        if(userExist.isPresent()) {
+            //random code
+            code = generateRandomNumberString();
+            //gui gmail
+            passwordResetEmailLink(userExist, code);
+            Long idUser = userExist.get().getId();
+            model.addAttribute("idUser", idUser);
+            return "confirm_code";
+        }
+        return "redirect:/auth/forgot-password";
+    }
+
+    @GetMapping("/confirm-code")
+    public String confirm(){
+        return "confirm_code";
+    }
+    @PostMapping("/confirm-code")
+    public String confirmCode(@RequestParam(name = "code") String codeEmail, Model model, @RequestParam(name = "id-user") Long idUser1){
+        if (code.equals(codeEmail)) {
+            model.addAttribute("idUser", idUser1);
+            return "reset_password";
+        }
+        return "redirect:/auth/forgot-password";
+    }
+    @GetMapping("/reset-password")
+    public String resetPassword(){
+        return "reset_password";
+    }
+    @PostMapping("/reset-password")
+    public String resetPass(@RequestParam(name = "idUser") Long idUser, @RequestParam(name = "password1") String password){
+        Optional<User> userOptional = userDAO.findById(idUser);
+        if(userOptional.isPresent()) {
+            User user = userOptional.get();
+            String encodedPassword = passwordEncoder.encode(password);
+            user.setPassword(encodedPassword);
+            // In ra thông tin người dùng để kiểm tra
+//            System.out.println("User information before update: " + user.toString());
+            userDAO.update(user);
+            return "redirect:/auth/login";
+        } else {
+            return "redirect:/login";
+        }
+    }
+
+    //Hàm random 6 số để check
+    public String generateRandomNumberString() {
+        Random random = new Random();
+        StringBuilder stringBuilder = new StringBuilder();
+        for (int i = 0; i < 6; i++) {
+            int randomNumber = random.nextInt(10); // 0 and 9
+            stringBuilder.append(randomNumber);
+        }
+        return stringBuilder.toString();
+    }
+
+
+    //send email
+    private void passwordResetEmailLink(Optional<User> user, String passwordResetToken) {
+        String subject = "Password Reset Request Verification";
+        String body = "Code: "+passwordResetToken;
+        emailService.sendEmail(user.get().getEmail(), subject, body);
     }
 }
 

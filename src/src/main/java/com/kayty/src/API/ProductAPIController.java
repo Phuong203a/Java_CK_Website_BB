@@ -8,6 +8,7 @@ import com.kayty.src.Model.Product;
 import com.kayty.src.Model.ShoppingCart;
 import com.kayty.src.Model.ShoppingCartProduct;
 import com.kayty.src.Model.User;
+import com.kayty.src.Repository.ProductRepository;
 import jakarta.servlet.http.HttpServletRequest;
 import com.kayty.src.Repository.ShoppingCartProductRepository;
 import com.kayty.src.Repository.ShoppingCartRepository;
@@ -41,37 +42,33 @@ public class ProductAPIController {
 
     @Autowired
     private HttpServletRequest request;
-
+    @Autowired
+    private ProductRepository productRepository;
     @GetMapping("/getProducts")
-    public Response<List<Product>> getAll()
+    public Object getAll()
     {
         List<Product> products = productRepository.findAll();
-        Map<String, List<Product>> data = new HashMap<>();
-        data.put("list", products);
-        return new Response<>(200, "Successful", products.size(), data);
+        return Response.createSuccessResponseModel(products.size(), products);
     }
 
     @GetMapping("/get-bestsale-product")
     public Response<List<Product>> getBestSaleProduct() {
         List<Product> list = productDAO.getBestSaleProduct();
-        Map<String, List<Product>> data = new HashMap<>();
-        data.put("list", list);
-        return new Response<>(200, "Successful",list.size(), data);
+        return Response.createSuccessResponseModel(list.size(), list);
     }
 
     @GetMapping("/get-detail/{id}")
     public Response<Object> getProductById(@PathVariable Long id) {
         Product p = (Product) productDAO.get(id);
         if(p == null) {
-            return new Response<>(400, "Data not found", null);
+            return Response.createErrorResponseModel("Data not found", false);
         }
-        Map<String, Object> data = new HashMap<>();
-        data.put("product", p);
-        return new Response<>(200, "Successful", data);
+
+        return Response.createSuccessResponseModel(1, p);
     }
 
     @GetMapping("/get-product-by-category/{category}")
-    public Response<List<Product>> getListProductByCategory(@PathVariable String category, @RequestParam(defaultValue = "1") Integer pageIndex)
+    public Object getListProductByCategory(@PathVariable String category, @RequestParam(defaultValue = "1") Integer pageIndex)
     {
         List<Product> limitedList;
         List<Product> listByCategory = productDAO.getProductByCategory(category);
@@ -89,20 +86,18 @@ public class ProductAPIController {
         data.put("pageListProduct", limitedList);
         data.put("listByCategory", listByCategory);
 
-        return new Response<>(200, "Successful", listByCategory.size(), data);
+        return Response.createSuccessResponseModel(listByCategory.size(), data);
     }
 
     @GetMapping("/get-product-by-subCategory/{subCategory}")
     public Response<List<Product>> getListProductBySubCategory(@PathVariable String subCategory) {
         System.out.println(subCategory);
         List<Product> list = productDAO.getProductBySubCategory(subCategory);
-        Map<String, List<Product>> data = new HashMap<>();
-        data.put("list", list);
-        return new Response<>(200, "Successful", data);
+        return Response.createSuccessResponseModel(list.size(), list);
     }
 
     @GetMapping("/get-list-search")
-    public Response<List<Product>> getListListSearch(@RequestParam String keywords, @RequestParam(defaultValue = "1") Integer pageIndex) {
+    public Response<Map<String, List<Product>>> getListListSearch(@RequestParam String keywords, @RequestParam(defaultValue = "1") Integer pageIndex) {
         System.out.println((keywords));
         List<Product> limitedList;
         List<Product> listSearch = productDAO.getListSearch(keywords);
@@ -120,7 +115,7 @@ public class ProductAPIController {
         data.put("pageListProduct", limitedList);
         data.put("listSearch", listSearch);
 
-        return new Response<>(200, "Successful", listSearch.size(), data);
+        return Response.createSuccessResponseModel(listSearch.size(), data);
     }
 
 
@@ -168,13 +163,13 @@ public class ProductAPIController {
                 Integer oldTotalQuantity = (Integer) session.getAttribute("totalQuantity");
                 session.setAttribute("totalQuantity", oldTotalQuantity + quantity);
 
-                return new Response<>(200, "Product added to cart successfully");
+                return Response.createResponseModel("Product added to cart successfully");
             } else {
-                return new Response<>(404, "User not found");
+                return Response.createErrorResponseModel("User not found", null);
             }
         } catch (Exception e) {
             e.printStackTrace();
-            return new Response<>(500, "Internal Server Error");
+            return Response.createErrorResponseModel("Internal Server Error", null);
         }
     }
 
