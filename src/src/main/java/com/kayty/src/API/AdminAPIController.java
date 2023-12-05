@@ -20,22 +20,30 @@ import java.util.Map;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/admin/api")
+@RequestMapping("/api/admin")
 public class AdminAPIController {
     @Autowired
     private OrderDAO orderDAO;
-    @Autowired
-    private UserDAO userDAO;
-    @Autowired
-    private ProductDAO productDAO;
     @Autowired
     private ProductRepository productRepository;
     @Autowired
     private UserRepository userRepository;
 
+    @GetMapping("/get-statistics")
+    public Object getStatistics() {
+        List<User> users = userRepository.findAll();
+        List<Order> orders  = orderDAO.getAllOrders();
+        List<Product> products = productRepository.findAll();
+        Map<String,Integer> res = new HashMap<>();
+        res.put("usersNumber", users.size());
+        res.put("ordersNumber", orders.size());
+        res.put("productsNumber", products.size());
 
-    @GetMapping("/order/get-full-order")
-    public Response<List<Order>> getShowAllOrder() {
+        return Response.createSuccessResponseModel(1, res);
+    }
+
+    @GetMapping("/get-full-order")
+    public Object getShowAllOrder() {
         List<Order> listOrder = orderDAO.getAllOrders();
 
         // Sử dụng Response để trả về dữ liệu và thông tin liên quan
@@ -46,19 +54,10 @@ public class AdminAPIController {
         Map<String, List<Order>> data = new HashMap<>();
         data.put("list", listOrder);
 
-        return new Response<>(200, "Successful", listOrder.size(), data);
+        return Response.createSuccessResponseModel(listOrder.size(), listOrder);
     }
 
-
-    //lay thong tin tat ca status nguoi dung
-    @GetMapping("/users")
-    public Response<List<User>> getAllUser(){
-        Iterable<User> liUser = userDAO.getAllUser();
-        Map<String, List<User>> data = new HashMap<>();
-        data.put("list", (List<User>) liUser);
-        return new Response<>(200, "Successful", ((List<User>) liUser).size(), data);
-    }
-    //them san pham
+    //add product
     @PostMapping("/add-product")
     public ResponseEntity<Product> addProduct(@RequestBody Product product){//@RequestParam("product_images") MultipartFile productImage
         //lay path cua anh

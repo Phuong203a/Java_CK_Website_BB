@@ -37,13 +37,18 @@
             <div class="row_pc">
 
                 <form class="form_login_acc">
-                    <input type="hidden" class="csrf" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+                    <!--<input type="hidden" class="csrf" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />-->
                     <div class="tit_login_acc">Đăng kí</div>
                     <div class="clearfix clearfix-30"></div>
                     <div class="group_login_input">
                         <div class="name_input_login">Username</div>
                         <div class="clearfix"></div>
                         <input  name="username" class="username input_login" aria-label="">
+                    </div>
+                    <div class="group_login_input">
+                        <div class="name_input_login">Email</div>
+                        <div class="clearfix"></div>
+                        <input  name="email" class="email input_login" aria-label="">
                     </div>
                     <div class="clearfix"></div>
                     <div class="group_login_input">

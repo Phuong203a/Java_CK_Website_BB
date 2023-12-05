@@ -79,7 +79,7 @@ public class AuthController {
         if(userExist == null) {
             String encodedPassword = passwordEncoder.encode(user.getPassword());
             Role role =  repository.getById(2L);
-            User newUser  = (User) userDAO.add(new User(user.getUsername(), encodedPassword,role));
+            User newUser  = (User) userDAO.add(new User(user.getUsername(), encodedPassword, user.getEmail(), role, true));
             ShoppingCart s = new ShoppingCart();
             s.setUser(newUser);
             shoppingCartRepository.save(s);
