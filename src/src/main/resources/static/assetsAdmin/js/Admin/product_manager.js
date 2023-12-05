@@ -98,7 +98,7 @@ $(".btn-add-product").on('click', () => {
                                         <td>${data.data.size}</td>
                                         <td class="text-end">
                                             <div class="actions">
-                                                <a href="#" class="btn btn-sm bg-success-light me-2">
+                                                <a href="#" class="btn btn-sm bg-success-light me-2" onclick="updateProduct(this)">
                                                     <i class="fe fe-pencil"></i>
                                                 </a>
                                                 <a href="#" class="btn btn-sm bg-danger-light" onclick="confirmDelete(this)" data-bs-toggle="modal" data-bs-target="#exampleModal">
