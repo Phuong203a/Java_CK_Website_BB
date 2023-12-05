@@ -15,6 +15,11 @@ function displayOrder(arr) {
                                         <td>
                                             ${o.id}
                                         </td>
+                                        
+                                        <td>${o.fullName}</td>
+                                        <td>${o.address}</td>
+                                        <td>${o.phone}</td>
+                                        <td>${o.user.email}</td>
                                         <td>${o.totalQuantity}</td>
                                         <td>${o.totalPrice}</td>
 
