@@ -30,5 +30,9 @@ public class AdminController {
     public String renderUserManager() {
         return "product_manager";
     }
+    @GetMapping("/order-manager")
+    public String renderOrderManager() {
+        return "order_manager";
+    }
 
 }

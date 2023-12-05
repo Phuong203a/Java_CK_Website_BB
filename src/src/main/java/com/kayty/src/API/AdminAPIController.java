@@ -7,6 +7,7 @@ import com.kayty.src.Helps.Response;
 import com.kayty.src.Model.Order;
 import com.kayty.src.Model.Product;
 import com.kayty.src.Model.User;
+import com.kayty.src.Repository.OrderRepository;
 import com.kayty.src.Repository.ProductRepository;
 import com.kayty.src.Repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +29,8 @@ public class AdminAPIController {
     private ProductRepository productRepository;
     @Autowired
     private UserRepository userRepository;
+    @Autowired
+    private OrderRepository orderRepository;
 
     @GetMapping("/get-statistics")
     public Object getStatistics() {
@@ -44,15 +47,12 @@ public class AdminAPIController {
 
     @GetMapping("/get-full-order")
     public Object getShowAllOrder() {
-        List<Order> listOrder = orderDAO.getAllOrders();
+        List<Order> listOrder = orderRepository.findAll();
 
         // Sử dụng Response để trả về dữ liệu và thông tin liên quan
         if (listOrder.isEmpty()) {
             return new Response<>(404, "No orders found", 0, null);
         }
-
-        Map<String, List<Order>> data = new HashMap<>();
-        data.put("list", listOrder);
 
         return Response.createSuccessResponseModel(listOrder.size(), listOrder);
     }
