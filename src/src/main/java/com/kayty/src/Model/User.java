@@ -7,6 +7,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDateTime;
@@ -31,7 +32,7 @@ public class User {
     @Column
     private String email;
 
-    @Column
+    @ColumnDefault("true")
     private Boolean status;
 
     @Column(nullable = true, unique = true)
@@ -54,11 +55,12 @@ public class User {
     private Set<Role> roles;
 
 
-    public User(String username, String password, Role userRole) {
+    public User(String username, String password, String email,  Role userRole, boolean status) {
         this.username = username;
         this.password = password;
-
+        this.email = email;
         this.roles = new HashSet<>(Collections.singletonList(userRole));
+        this.status = status;
     }
 
     public User(String username, String password, ShoppingCart shoppingCart) {

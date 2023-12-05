@@ -6,6 +6,7 @@ import com.kayty.src.Model.Product;
 import com.kayty.src.Model.User;
 import com.kayty.src.Repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
@@ -18,16 +19,11 @@ public class UserAPIController {
     @Autowired
     private UserRepository userRepository;
 
-    @Autowired
-    private UserDAO userDAO;
+    @GetMapping("/get-all-users")
+    public Object getAllUsers() {
+        List<User> users = userRepository.findAll(Sort.by(Sort.Direction.DESC, "createdDate"));
 
-    //lay thong tin tat ca status nguoi dung
-    @GetMapping("/")
-    public Response<List<User>> getAllUser(){
-        Iterable<User> liUser = userDAO.getAllUser();
-        Map<String, List<User>> data = new HashMap<>();
-        data.put("list", (List<User>) liUser);
-        return new Response<>(200, "Successful", ((List<User>) liUser).size(), data);
+        return Response.createSuccessResponseModel(users.size(), users);
     }
 
     @PostMapping("/add-user")
@@ -46,23 +42,13 @@ public class UserAPIController {
                 user.setPassword(password);
                 userRepository.save(user);
 
-                return new Response(200, "add user success");
+                return Response.createResponseModel("add user success");
             }else {
-                return new Response<>(404, "password and confirm password must be same or username empty");
+                return Response.createResponseModel("password and confirm password must be same or username empty");
             }
         }catch (Exception e){
             e.printStackTrace();
-            return new Response<>(500, "Internal Server Error");
+            return Response.createResponseModel("Internal Server Error");
         }
     }
-
-//    @PostMapping("/update-status/{id}")
-//    public Response<User> updateStatus(@PathVariable Long id, ){
-//        User user = userRepository.getById(id);
-//        boolean status = req.;
-//
-//
-//        return new Response<>(200, "update successful");
-//    }
-
 }

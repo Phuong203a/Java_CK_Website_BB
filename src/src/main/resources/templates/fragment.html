@@ -55,7 +55,7 @@
       <div class="row_pc">
 
         <ul class="acc_header fadeInLeft wow">
-          <input type="hidden" class="csrf" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+          <!--<input type="hidden" class="csrf" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />-->
           <li th:if="${#authorization.expression('isAuthenticated()')}">
             <!-- Nếu người dùng đã đăng nhập, hiển thị username và liên kết logout -->
             <span class="user-name" th:text="${#authentication.principal.username}"></span> |

@@ -35,7 +35,10 @@ function pay() {
         const quantityPay = $(".cart-count").text();
         const data = {
             quantityPay: quantityPay,
-            moneyPay: parseInt($(".money-pay").text().replace("đ", ""))
+            moneyPay: parseInt($(".money-pay").text().replace("đ", "")),
+            address: $(".address").val(),
+            fullname: $(".name").val(),
+            phone: $(".phone-number").val()
         }
 
         fetch("http://localhost:8080/api/order/add-order", {

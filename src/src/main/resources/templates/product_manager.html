@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="fragmentAdmin:: head">
+<style>
+    .description-cell {
+        max-width: 150px; /* Set your desired maximum width */
+        word-break: break-word; /* Allow breaking of long words */
+    }
+</style>
+
+<body>
+
+<div class="main-wrapper">
+
+    <div th:replace="fragmentAdmin:: header"></div>
+
+    <div th:replace="~{fragmentAdmin:: sidebars}"></div>
+
+
+    <div class="page-wrapper">
+        <div class="content container-fluid">
+            <div class="page-header">
+                <div class="row align-items-center">
+                    <div class="col">
+                        <h3 class="page-title">Products</h3>
+                        <ul class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/">Dashboard</a></li>
+                            <li class="breadcrumb-item active">Product Manager</li>
+                        </ul>
+                    </div>
+                </div>
+                <div style="height: 20px"></div>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addProductModal">Thêm sản phẩm</button>
+                <div style="padding-left: 0" class="table-search float-end">
+                    <input type="text" class="form-control" id="search" placeholder="Search">
+                    <button class="btn" type="submit"><i class="fa fa-search"></i></button>
+                </div>
+                <div style="height: 20px"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 d-flex">
+
+                    <div class="card card-table flex-fill">
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-hover table-center mb-0">
+                                    <thead>
+                                    <tr>
+                                        <th>Tên</th>
+                                        <th>Giá</th>
+                                        <th>Mô tả </th>
+                                        <th>Loại</th>
+                                        <th>Loại con</th>
+                                        <th>Kích cỡ</th>
+                                        <th class="text-end">Action</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody class="tbody">
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<!--modal delete product-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Bạn có muốn xoá sản phẩm này không?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Huỷ</button>
+                    <button type="button" class="btn btn-primary" onclick="removeProduct(id)">Xoá</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!--modal add product-->
+<div class="modal fade" id="addProductModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="add-product-modal-label">Thêm sản phẩm</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="/api/admin/add-product" method="post" id="from-add-product" enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <label for="product-name">Tên sản phẩm</label>
+                        <input class="form-control" type="text" placeholder="Nhập tên sản phẩm" id="product-name" name="productName">
+                    </div>
+                    <div class="mb-3">
+                        <label for="price">Giá sản phẩm</label>
+                        <input class="form-control" type="number" placeholder="Nhập giá bán" id="price" name="price">
+                    </div>
+                    <div class="mb-3">
+                        <label for="category">Danh mục</label>
+                        <select class="form-control" id="category" name="category">
+                            <!-- Add options dynamically based on your categories -->
+                            <option value="Bánh kem">Bánh kem</option>
+                            <option value="Bánh khô">Bánh khô</option>
+                            <option value="Bánh mỳ">Bánh mỳ</option>
+                            <option value="Bánh ngọt">Bánh ngọt</option>
+                            <option value="Bánh theo mùa">Bánh theo mùa</option>
+                            <option value="Bánh tráng miệng">Bánh tráng miệng</option>
+                            <option value="Bánh đông lạnh">Bánh đông lạnh</option>
+                            <!-- Add more options as needed -->
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="product-images">Ảnh sản phẩm</label>
+                        <input type="file" class="form-control-file" id="product-images" name="product_image" accept="image/*" multiple>
+                    </div>
+                    <div class="mb-3">
+                        <label for="sub-category">Danh mục con</label>
+                        <select class="form-control" id="sub-category" name="subCategory">
+                            <option value="Bánh cho trẻ em">Bánh cho trẻ em</option>
+                            <option value="Bánh kem đặt trước">Bánh kem đặt trước</option>
+                            <option value="Bánh sinh nhật">Bánh sinh nhật</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="size">Kích thước</label>
+                        <select class="form-control" id="size" name="size">
+                            <option value="M">Size M</option>
+                            <option value="L">Size L</option>
+                            <option value="S">Size S</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="description">Mô tả</label>
+                        <input class="form-control" type="text" placeholder="Nhập mô tả  sản phẩm" id="description" name="description">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"> Huỷ </button>
+                <button type="button" class="btn-add-product btn btn-primary"> Thêm </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--modal update product-->
+<div class="modal fade" id="updateProductModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="update-product-modal-label">Cập nhật sản phẩm</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="/api/admin/add-product" method="post" id="from-update-product" enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <label for="product-name">Tên sản phẩm</label>
+                        <input class="form-control" type="text" placeholder="Nhập tên sản phẩm" id="product-name-update" name="productName">
+                    </div>
+                    <div class="mb-3">
+                        <label for="price">Giá sản phẩm</label>
+                        <input class="form-control" type="number" placeholder="Nhập giá bán" id="price-update" name="price">
+                    </div>
+                    <div class="mb-3">
+                        <label for="category">Danh mục</label>
+                        <select class="form-control" id="category-update" name="category">
+                            <!-- Add options dynamically based on your categories -->
+                            <option value="Bánh kem">Bánh kem</option>
+                            <option value="Bánh khô">Bánh khô</option>
+                            <option value="Bánh mỳ">Bánh mỳ</option>
+                            <option value="Bánh ngọt">Bánh ngọt</option>
+                            <option value="Bánh theo mùa">Bánh theo mùa</option>
+                            <option value="Bánh tráng miệng">Bánh tráng miệng</option>
+                            <option value="Bánh đông lạnh">Bánh đông lạnh</option>
+                            <!-- Add more options as needed -->
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="sub-category">Danh mục con</label>
+                        <select class="form-control" id="sub-category-update" name="subCategory">
+                            <option value="Bánh cho trẻ em">Bánh cho trẻ em</option>
+                            <option value="Bánh kem đặt trước">Bánh kem đặt trước</option>
+                            <option value="Bánh sinh nhật">Bánh sinh nhật</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="size">Kích thước</label>
+                        <select class="form-control" id="size-update" name="size">
+                            <option value="M">Size M</option>
+                            <option value="L">Size L</option>
+                            <option value="S">Size S</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="description">Mô tả</label>
+                        <input class="form-control" type="text" placeholder="Nhập mô tả  sản phẩm" id="description-update" name="description">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"> Huỷ </button>
+                <button type="button" class="btn-update-product btn btn-primary" onclick="confirmUpdate()"> Cập nhật </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/assetsAdmin/js/jquery-3.6.0.min.js"></script>
+
+<script src="/assetsAdmin/js/bootstrap.bundle.min.js"></script>
+
+<script src="/assetsAdmin/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+<script src="/assetsAdmin/js/script.js"></script>
+<script src="/assetsAdmin/js/Admin/product_manager.js"></script>
+</body>
+</html>

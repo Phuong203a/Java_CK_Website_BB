@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="fragmentAdmin:: head">
+<style>
+    .description-cell {
+        max-width: 150px; /* Set your desired maximum width */
+        word-break: break-word; /* Allow breaking of long words */
+    }
+</style>
+
+<body>
+
+<div class="main-wrapper">
+
+    <div th:replace="fragmentAdmin:: header"></div>
+
+    <div th:replace="~{fragmentAdmin:: sidebars}"></div>
+
+
+    <div class="page-wrapper">
+        <div class="content container-fluid">
+            <div class="page-header">
+                <div class="row align-items-center">
+                    <div class="col">
+                        <h3 class="page-title">Orders</h3>
+                        <ul class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/">Dashboard</a></li>
+                            <li class="breadcrumb-item active">Order Manager</li>
+                        </ul>
+                    </div>
+                </div>
+                <div style="height: 20px"></div>
+                <div style="padding-left: 0" class="table-search float-end">
+                    <input type="text" class="form-control" placeholder="Search">
+                    <button class="btn" type="submit"><i class="fa fa-search"></i></button>
+                </div>
+                <div style="height: 20px"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 d-flex">
+
+                    <div class="card card-table flex-fill">
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-hover table-center mb-0">
+                                    <thead>
+                                    <tr>
+                                        <th>Id</th>
+                                        <th>Họ và tên</th>
+                                        <th>Địa chỉ</th>
+                                        <th>Số điện thoại</th>
+                                        <th>Email</th>
+                                        <th>Tổng số lượng</th>
+                                        <th>Tổng tiền</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody class="tbody">
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<script src="/assetsAdmin/js/jquery-3.6.0.min.js"></script>
+
+<script src="/assetsAdmin/js/bootstrap.bundle.min.js"></script>
+
+<script src="/assetsAdmin/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+<script src="/assetsAdmin/js/script.js"></script>
+<script src="/assetsAdmin/js/Admin/order_manager.js"></script>
+</body>
+</html>

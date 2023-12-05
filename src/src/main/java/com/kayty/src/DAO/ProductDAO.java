@@ -28,7 +28,7 @@ public class ProductDAO implements Repository {
     private final String GET_PRODUCT_BY_ID = "SELECT NEW  com.kayty.src.Model.Product(p.id, p.productName, p.imageUrl, p.category, p.description, p.subCategory, p.price, p.size) FROM Product p WHERE p.id = :id";
     private String GET_PRODUCT_BY_CATEGORY = "SELECT NEW  com.kayty.src.Model.Product(p.id, p.productName, p.imageUrl, p.category, p.subCategory, p.price, p.size) FROM Product p WHERE p.category = :category";
 
-    private String  GET_PRODUCT_BY_NAME = "SELECT NEW com.kayty.src.Model.Product(p.id, p.productName, p.imageUrl, p.category, p.subCategory, p.price, p.size) FROM Product p WHERE p.productName LIKE CONCAT('%', :keyword, '%')";
+    private String  GET_PRODUCT_BY_NAME = "SELECT NEW com.kayty.src.Model.Product(p.id, p.productName, p.imageUrl, p.category, p.description, p.subCategory, p.price, p.size) FROM Product p WHERE p.productName LIKE CONCAT('%', :keyword, '%')";
     private final String GET_PRODUCT_BY_SUB_CATEGORY = "SELECT NEW  com.kayty.src.Model.Product(p.id, p.productName, p.imageUrl, p.category, p.subCategory, p.price, p.size) FROM Product p WHERE p.subCategory = :subCategory";
     private final String GET_SUB_CATEGORY = "SELECT p.subCategory FROM Product p WHERE p.category = :category GROUP BY p.subCategory";
 

@@ -62,30 +62,23 @@ public class UserDAO implements Repository {
         }
     }
 
-
     @Override
     public boolean update(Object item) {
+        if(item != null) {
+            userRepository.save((User) item);
+            return true;
+        }
         return false;
     }
-
-//    public Iterable<User> getAllUser(){
-//        return userRepository.findAll();
-//    }
-public Iterable<User> getAllUser() {
-    return userRepository.findAll();
-}
 
     public Optional<User> findByEmail(String email) {
         return userRepository.findByEmail(email);
     }
 
-
-
     public void resetUserPassword(User user, String newPassword) {
         user.setPassword(passwordEncoder.encode(newPassword));
         userRepository.save(user);
     }
-
 
     public Optional<User> findById(Long idUser) {
         return userRepository.findById(idUser);
