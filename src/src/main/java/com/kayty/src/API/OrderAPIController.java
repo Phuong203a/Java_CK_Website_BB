@@ -61,11 +61,15 @@ public class OrderAPIController {
     }
 
     @PostMapping("/add-order")
-    public Response<Object> addOrder(@RequestBody Map<String, Integer> req) {
-        int quantityPay = req.get("quantityPay");
-        int moneyPay =req.get("moneyPay");
+    public Response<Object> addOrder(@RequestBody Map<String, String> req) {
+        int quantityPay = Integer.parseInt(req.get("quantityPay"));
+        int moneyPay = Integer.parseInt(req.get("moneyPay"));
+        String fullname = req.get("fullname");
+        String phone = req.get("phone");
+        String address = req.get("address");
 
-        Order order = new Order(Utils.userLogin, quantityPay, moneyPay);
+
+        Order order = new Order(Utils.userLogin, quantityPay, moneyPay, fullname, phone, address);
         orderRepository.save(order);
         Utils.orderNow = order;
         //delete all shopping-cart after order successfully

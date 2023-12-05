@@ -11,10 +11,16 @@ import com.kayty.src.Repository.OrderRepository;
 import com.kayty.src.Repository.ProductRepository;
 import com.kayty.src.Repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -31,6 +37,8 @@ public class AdminAPIController {
     private UserRepository userRepository;
     @Autowired
     private OrderRepository orderRepository;
+    @Value("${spring.servlet.multipart.location}")
+    private String uploadPath;
 
     @GetMapping("/get-statistics")
     public Object getStatistics() {
@@ -51,7 +59,7 @@ public class AdminAPIController {
 
         // Sử dụng Response để trả về dữ liệu và thông tin liên quan
         if (listOrder.isEmpty()) {
-            return new Response<>(404, "No orders found", 0, null);
+            return Response.createErrorResponseModel("No orders found",null);
         }
 
         return Response.createSuccessResponseModel(listOrder.size(), listOrder);
@@ -59,31 +67,59 @@ public class AdminAPIController {
 
     //add product
     @PostMapping("/add-product")
-    public ResponseEntity<Product> addProduct(@RequestBody Product product){//@RequestParam("product_images") MultipartFile productImage
-        //lay path cua anh
-//        String imagePath = "/images/" + productImage.getOriginalFilename();
-//        product.setImageUrl(imagePath);
-        productRepository.save(product);
-        return new ResponseEntity<>(product, HttpStatus.CREATED);
+    public Object addProduct(@ModelAttribute Product product,
+                                       @RequestParam("product_image") MultipartFile image) {
+        if (!image.isEmpty()) {
+            String imageName = product.getProductName() + ".jpg";
+            String imagePath = uploadPath+ imageName;
+            File f = new File(uploadPath);
+            if(!f.exists()) {
+                f.mkdir();
+            }
+            try {
+
+                Files.copy(image.getInputStream(), Paths.get(imagePath));
+
+                product.setImageUrl("/images/"+imageName);
+
+                // Save product to the database
+                productRepository.save(product);
+
+                return Response.createSuccessResponseModel(200,  product);
+            } catch (IOException e) {
+                e.printStackTrace(); // Handle the exception appropriately
+                return Response.createErrorResponseModel("Error saving image", null);
+            }
+        } else {
+            // Handle the case when no image is provided
+            return Response.createErrorResponseModel("Image is required", null);
+        }
     }
 
-    //sua san pham
-    @PutMapping(value = "/edit-product/{id}")
-    public ResponseEntity<Product> updateProduct(@RequestBody Product updatedProduct, @PathVariable(value = "id") Long id) {
-        //check xem id co ton tai hay khong
-        Optional<Product> existingProductOptional = productRepository.findById(id);
+    //update product
+    @PostMapping("/update")
+    public Object updateProduct(@RequestBody Product p) {
+        Product product = productRepository.getReferenceById(p.getId());
+        try {
 
-        if (existingProductOptional.isPresent()) {
-            updatedProduct.setId(id);
-            // Lưu sản phẩm đã cập nhật vào cơ sở dữ liệu
-            System.out.println(updatedProduct.toString());
-            Product savedProduct = productRepository.save(updatedProduct);
-            // Trả về đã cập nhật và trạng thái OK
-            return new ResponseEntity<>(savedProduct, HttpStatus.OK);
-        } else {
-            // Trả về không tìm thấy sản phẩm
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            product.setProductName(p.getProductName());
+            product.setPrice(p.getPrice());
+            product.setSize(p.getSize());
+            if(p.getCategory() != null)
+            {
+                product.setCategory(p.getCategory());
+                product.setSubCategory(p.getSubCategory());
+            }
+            if(p.getDescription() != null)
+                product.setDescription(p.getDescription());
+            productRepository.save(product);
         }
+        catch (Exception e) {
+            System.out.println(e.getMessage());
+            return Response.createErrorResponseModel("Error in line 119 AdminAPI", null);
+        }
+
+        return Response.createSuccessResponseModel( 0, product);
     }
 
     //xoa san pham

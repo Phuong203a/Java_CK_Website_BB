@@ -35,10 +35,10 @@
     <i class="fe fe-text-align-left"></i>
   </a>
   <div class="top-nav-search">
-    <form>
+    <!--<form>
       <input type="text" class="form-control" placeholder="Search here">
       <button class="btn" type="submit"><i class="fa fa-search"></i></button>
-    </form>
+    </form>-->
   </div>
 
   <a class="mobile_btn" id="mobile_btn">
@@ -149,83 +149,44 @@
       <ul>
         <li class="menu-title">
         </li>
-        <li class="active">
+        <li class="">
           <a href="/admin"><i class="fe fe-home"></i> <span>Trang chủ</span></a>
         </li>
         <li>
-          <a href="/admin/product-manager"><i class="fe fe-users"></i> <span>Sản phẩm</span></a>
+          <a href="/admin/product-manager"><i class="fa-solid fa-pizza-slice"></i> <span>Sản phẩm</span></a>
         </li>
         <li>
           <a href="/admin/order-manager"><i class="fe fe-users"></i> <span>Đơn hàng</span></a>
         </li>
-        <li class="submenu">
-          <a href="#"><i class="fe fe-sync"></i> <span> History </span> <span class="menu-arrow"></span></a>
-          <ul style="display: none;">
-            <li><a href="call-history.html"> Call History </a></li>
-            <li><a href="group-history.html"> Group History </a></li>
-          </ul>
-        </li>
-        <li class="submenu">
-          <a href="#"><i class="fe fe-gear"></i> <span> Settings </span> <span class="menu-arrow"></span></a>
-          <ul style="display: none;">
-            <li><a href="general.html">General</a></li>
-            <li><a href="admob.html">Admob </a></li>
-            <li><a href="sinch-settings.html">Sinch Settings </a></li>
-            <li><a href="firebase-settings.html">Firebase Settings </a></li>
-          </ul>
-        </li>
+
         <li>
-          <a href="#"><i class="fe fe-file"></i> <span>Blank Page</span></a>
-        </li>
-        <li>
-          <a href="#"><i class="fe fe-map"></i> <span>Vector Maps</span></a>
-        </li>
-        <li>
-          <a href="#"><i class="fe fe-vector"></i> <span>Components</span></a>
-        </li>
-        <li class="submenu">
-          <a href="#"><i class="fe fe-layout"></i> <span> Forms <span class="menu-arrow"></span></span></a>
-          <ul style="display: none;">
-            <li><a href="form-basic-inputs.html">Basic Inputs</a></li>
-            <li><a href="form-input-groups.html">Input Groups</a></li>
-            <li><a href="form-horizontal.html">Horizontal Form</a></li>
-            <li><a href="form-vertical.html">Vertical Form </a></li>
-            <li><a href="form-mask.html">Form Mask</a></li>
-            <li><a href="form-validation.html">Form Validation </a></li>
-          </ul>
-        </li>
-        <li class="submenu">
-          <a href="#"><i class="fe fe-table"></i> <span> Tables <span class="menu-arrow"></span></span></a>
-          <ul style="display: none;">
-            <li><a href="tables-basic.html">Basic Tables </a></li>
-            <li><a href="data-tables.html">Data Table </a></li>
-          </ul>
-        </li>
-        <li class="submenu">
-          <a href="javascript:void(0);"><i class="fe fe-code"></i> <span>Multi Level</span> <span class="menu-arrow"></span></a>
-          <ul style="display: none;">
-            <li class="submenu">
-              <a href="javascript:void(0);"> <span>Level 1</span> <span class="menu-arrow"></span></a>
-              <ul style="display: none;">
-                <li><a href="javascript:void(0);"><span>Level 2</span></a></li>
-                <li class="submenu">
-                  <a href="javascript:void(0);"> <span> Level 2</span> <span class="menu-arrow"></span></a>
-                  <ul style="display: none;">
-                    <li><a href="javascript:void(0);">Level 3</a></li>
-                    <li><a href="javascript:void(0);">Level 3</a></li>
-                  </ul>
-                </li>
-                <li><a href="javascript:void(0);"> <span>Level 2</span></a></li>
-              </ul>
-            </li>
-            <li>
-              <a href="javascript:void(0);"> <span>Level 1</span></a>
-            </li>
-          </ul>
+          <a href="/logout"><i class="fa-solid fa-right-to-bracket"></i> <span>Logout</span></a>
         </li>
       </ul>
     </div>
   </div>
 </div>
 </body>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Get all <a> tags inside <li> elements
+        var links = document.querySelectorAll('ul li a');
+
+        // Add click event listener to each <a> tag
+        links.forEach(function (link) {
+            link.addEventListener('click', function () {
+                console.log(179)
+                // Remove the 'active' class from all <li> elements
+                document.querySelectorAll('ul li').forEach(function (li) {
+                    li.classList.remove('active');
+                });
+
+                // Add the 'active' class to the parent <li> of the clicked <a> tag
+                this.closest('li').classList.add('active');
+            });
+        });
+    });
+</script>
+
 </html>
